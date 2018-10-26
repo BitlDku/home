@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>AmRMR</title>
+    </head>
+    <body>
+        <h1>[AmRMR]</h1>
+        <table>
+            <tbody>
+                <tr>
+                    <td>
+                        <p>
+                            <strong>1. Introduction<br></strong>
+                            Feature selection is one of the data preprocessing techniques that can improve the speed of computing as well as remove the noise of data when the number of features of the dataset to be analyzed is several hundred thousand or more. Feature selection is also aimed at enhancing the classification accuracy built through machine learning. Minimum Redundancy - Maximum Relevance (mRMR) is one of well-known feature selection algorithms that selects features by calculating redundancy and relevance between features and class vector. mRMR uses mutual information as a measure of redundancy and relevance. In this study, we proposed a method to improve the performance of mRMR feature selection by using Pearson’s correlation coefficient as a redundancy measure and using R-value as a relevance measure. We selected features by original mRMR and proposed method from various datasets, and performed classification test. From the results, we confirmed that the proposed method showed significant improvement in classification accuracy in many cases.
+                        </p>
+                        <p allign="center">
+                            <img width="100%" height="100%" src="figure1.jpg">
+                            <br>
+                            <div allign="center">Figure1. Pseudo Code of AmRMR</div>
+                        </p>
+
+                        <p>
+                            <strong>2. Source Code<br></strong>
+                            <ul>
+                                <li>
+                                    test dataset : 
+                                    <a href="isolet.csv" download> download isolet dataset</a>
+                                </li>
+                                <li>
+                                    AmRMR source file : 
+                                    <a href="AmRMR.R" download> download AmRMR.R</a>
+                                </li>
+                                <li>
+                                    R-value source file : AmRMR needs
+                                    <a href="Rvaluelib2.R" download>Rvalue source</a>
+                                </li>
+                                <li>
+                                    AmRMR test source using test dataset : 
+                                    <a href="test.AmRMR.R" download>Download test AmRMR</a>
+                                </li>
+                            </ul>
+                        </p>
+                        <p>
+                            <strong>4. Citation Request:<br></strong>
+                            Sejong Oh, Improved Measures of Redundancy and Relevance for mRMR Feature Selection.
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>
