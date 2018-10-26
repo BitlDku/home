@@ -1,0 +1,10 @@
+.img_frame img {
+    width: 380px;
+    height: 180px;
+}
+
+img {
+    margin: 0px;
+    padding: 0px;
+    border: none;
+}
