@@ -1,10 +1,37 @@
-ul{
-    display:block;
-    float: left;
-    margin: 0;
-    padding: 10px 0 0 0;
-    list-style: none;
+#back{
+    background-color: #f3f3f3;
 }
-li{
+
+#img_center{
     display: inline;
+}
+
+#left{
+    float:left;
+}
+
+#right{
+    float:right;
+    margin-bottom:30px;
+}
+
+.board{
+    margin-left:20px;
+    margin-right:20px;
+}
+
+.menu{
+    width:15%;
+    height:100%;
+    float:left;
+    text-align:left;
+}
+
+.content{
+    width:85%;
+    float:right;
+}
+
+.foot{
+    text-align: center;
 }

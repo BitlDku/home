@@ -4,53 +4,52 @@
     <title>BITL website</title>
     <link rel="stylesheet" type="text/css" href="css/template_index.css">
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    
   </head>
   <body>
-    <div><img src="img/bitl.png"></div>
-    
-    <div>
-      <ul>
-        <li>
-         <a href="#" class="btn btn-large disabled"><span>Home</span></a>
-        </li>
-        <li>
-          <a href="./introduction/introduction.html" class="btn btn-large disabled"><span>Introduction</span></a>
-        </li>
-        <li>
-          <a href="./professor/professor.html" class="btn btn-large disabled"><span>Professor</span></a>
-        </li>
-        <li>
-          <a href="./members/members.html" class="btn btn-large disabled"><span>Members</span></a>
-         </li>
-        <li>
-          <a href="./research/research.html" class="btn btn-large disabled"><span>Research</span></a>
-        </li>
-        <li>
-         <a href="./education/education.html" class="btn btn-large disabled"><span>Education</span></a>
-        </li>
-    
-      </ul>
+    <div id="back">
+        <div><img src="img/bitl.png"></div>
+        <div class="navbar">
+            <div class="navbar-inner">
+              
+              <ul class="nav">
+                <li class="active"><a href="#">HOME</a></li>
+                <li><a href="./introduction/introduction.html">Intreoduction</a></li>
+                <li><a href="./professor/professor.html">Professor</a></li>
+                <li><a href="./members/members.html">Members</a></li>
+                <li><a href="./research/research_journal.html">Research</a></li>
+                <li><a href="./education/education.html">Education</a></li>
+                <li><a href="./sw/AmRMR.html">Software</a></li>
+              </ul>
+            </div>
+          </div>
+        
     </div>
     <div>
-      <img src="img/home_pic.jpg" height="100" alt="main_pic" title="main_pic">
+    <div class="board">
+    <div id="left">
+      <img id="img_center" src="img/home_pic.jpg" width="350" alt="main_pic" title="main_pic" align="center">
     </div>
-    <div class="lead">
+    <div id="right" class="lead">
+      <br>
+      <p>
       “Data are becoming the new raw material of business”  - <span class="text-info">Craig Mundie, Microsoft</span><br>
 “You can have data without information, but you cannot have information without data” – <span class="text-info">Writer</span><br>
 “It is a capital mistake to theorize before one has data” – <span class="text-info">Sherlock Homes</span><br>
-“Data is the new oil” – <span class="text-info">Clive Humby</span><br> 
+“Data is the new oil” – <span class="text-info">Clive Humby</span><br> </p>
+    </div>
     </div>
 
-    <div>
-      <img src="img/ndsl.png" height="20">
-      <img src="img/kict.png" height="20">
-      <img src="img/data.png" height="20">
-      <img src="img/kaggle.png" height="20">
-      <img src="img/kmooc.png" height="20">
-    </div>
-    <div>
+    <div class="foot">
+      <img src="img/ndsl.png" width="70">
+      <img src="img/kict.png" width="70">
+      <img src="img/data.png" width="70">
+      <img src="img/kaggle.png" width="70">
+      <img src="img/kmooc.png" width="70">
+    
       <p>경기도 용인시 수지구 죽전로 152 단국대학교 소프트웨어ICT관 410호</p>
     </div>
+  </div>
     <script src="http://code.jquery.com/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
   </body>
