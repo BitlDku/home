@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>RFS</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link rel="stylesheet" type="text/css" href="../css/template_index.css">
+    </head>
+    <body>
+            <div>
+                    <div id="back"><img src="../img/bitl.png"></div>
+                    <div class="navbar">
+                        <div class="navbar-inner">
+                          
+                          <ul class="nav">
+                            <li><a href="../index.html">HOME</a></li>
+                            <li><a href="../introduction/introduction.html">Intreoduction</a></li>
+                            <li><a href="../professor/professor.html">Professor</a></li>
+                            <li><a href="../members/members.html">Members</a></li>
+                            <li><a href="../research/research_journal.html">Research</a></li>
+                            <li><a href="../education/education.html">Education</a></li>
+                            <li class="active"><a href="../sw/software.html">Software</a></li>
+                          </ul>
+                        </div>
+            </div>
+            <div class="board">
+
+            <div class="menu">
+                <ul class="nav nav-pills nav-stacked">
+                    <li>
+                        <a href="./software.html">BIO SOFTWARE</a>
+                    </li>
+                    <li>
+                       <a href="./balancedSampling.html">balancedSampling</a>
+                    </li>
+                </ul>
+            </div>
+        <h3>[ RFS ]</h3>
+        <table>
+            <tbody>
+                <tr>
+                    <td>
+                        <p>
+                            <strong>1. Introduction<br></strong>
+                            Feature selection is one of the most important issues in classification, and is particularly relevant in the context of microarray datasets with thousands of features, most of which are likely to be uninformative. 
+ Here, we propose a new efficient feature selection method based on the R-value. The original R-value was designed to evaluate the entire dataset, but we also found that it could be applied to the feature selection task using the modified R(D). The R-value-based feature selection (RFS) method scores the overlapping areas of each feature in candidate features, and then selects features that have low R-value. Proposed idea is simple, but powerful for feature selection. 
+                        </p>
+                        <p></p>
+                        <ul>
+                            <li><b>Step 1.</b> Separate total data into a single feature<br><br>
+                            <center>
+                                <img src="fig1.PNG"><br><br>
+                            </center>
+                            <p></p>
+                            <p>
+                            </p></li><li><b>Step 2.</b> Calculate R-value for each single feature<br><br>
+                            <center>
+                                <img src="fig2.PNG"><br><br>
+                            </center>
+                            <p></p>
+                            <p>
+                            </p></li><li><b>Step 3.</b> Generate new data-set by choosing features which have small R-value<br><br>
+                            <center>
+                                <img src="fig3.PNG"><br><br>
+                            </center>
+                            <p></p>
+                    
+                            <p></p>
+                            </li>
+                        </ul>
+                        <p></p>
+                        <p allign="center">
+                            <img width="100%" height="100%" src="rValueFigure1.jpg">
+                            <br>
+                            <div allign="center">Figure1. Concept of R-value</div>
+                        </p>
+
+                        <p><font size="2" face="Verdana">	
+                                <br><b>** 3 types of R-value</b><br>
+                                </font>
+                            </p>
+
+                            <ul>
+                                <li>R-value between two categories (<i>Figure 2(a)</i>)
+                                </li><li>R-value of a category (<i>Figure 2(b)</i>)
+                                </li><li>R-value of a whole dataset (<i>Figure 2(c)</i>)
+                                </li>
+                            </ul>
+                            <p></p>
+
+                            <strong>2. Usage<br></strong>
+                            <br>
+                            <br>
+                            <!--
+		<B>Format of Excution: </B><BR><BR>
+		java calcRvalue [dataset file name] [K value] [seta value]<BR><BR>
+		<B>Options:</B><BR><BR>
+		-dataset file name : dataset file for evaluation <br>
+		-K value : number of nearest neighbors (optional)<br>
+		-seta value : threshold to decide if a sample belongs to overlapping area or not (optional)<br>
+		<BR>
+		<B>Examples</B> <BR><BR>
+		java calcRvalue mydataset.csv <br>
+		java calcRvalue mydataset.csv 7 3<br>
+		-->
+                        </p>
+                        <p>
+                            <strong>3. Download<br></strong>
+                            <br>
+                            <a href="rvalue_test.R" download>rvalue_test.R</a>
+                               
+                            <a href="RvalueLib.r" download> RvalueLib.r</a>
+                        </p>
+                        <p></p>
+                            <strong>4. Citation Request:<br></strong>
+                            <li>
+                                <font size="2" face="Verdana">Jimin Lee, Batnyam Nomin and Sejong Oh*, RFS: Efficient feature selection method based on <i>R-value</i>, Comput. Biol. Med. (2012) (Article in press), 
+                                <a href="http://dx.doi.org/10.1016/j.compbiomed.2012.11.010" target="_blank">http://dx.doi.org/10.1016/j.compbiomed.2012.11.010</a>
+                            
+                                </font>
+                            </li>
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    </body>
+</html>
