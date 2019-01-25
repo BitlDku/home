@@ -1,0 +1,178 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Concave Hull</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link rel="stylesheet" type="text/css" href="../css/template_index.css">
+    </head>
+    <body>
+            <div>
+                    <div id="back"><img src="../img/bitl.png"></div>
+                    <div class="navbar">
+                        <div class="navbar-inner">
+                          
+                          <ul class="nav">
+                            <li><a href="../index.html">HOME</a></li>
+                            <li><a href="../introduction/introduction.html">Intreoduction</a></li>
+                            <li><a href="../professor/professor.html">Professor</a></li>
+                            <li><a href="../members/members.html">Members</a></li>
+                            <li><a href="../research/research_journal.html">Research</a></li>
+                            <li><a href="../education/education.html">Education</a></li>
+                            <li class="active"><a href="../sw/software.html">Software</a></li>
+                          </ul>
+                        </div>
+            </div>
+            <div class="board">
+
+            <div class="menu">
+                <ul class="nav nav-pills nav-stacked">
+                    <li>
+                        <a href="./software.html">BIO SOFTWARE</a>
+                    </li>
+                    <li>
+                       <a href="./balancedSampling.html">balancedSampling</a>
+                    </li>
+                </ul>
+            </div>
+        <h3>[ Concave Hull ]</h3>
+        <table>
+            <tbody>
+                <tr>
+                    <td>
+                        <p>
+                            <strong>1. Introduction<br></strong>
+                            dkuCH is a software for making concave hull from convex hull. The goal of this algorithm is presenting precise vertexes from dataset. It is operated on console window and make the output data which is a form of value chart.
+                        </p>
+                        <p align="center"><img alt="content3" src="http://user.dankook.ac.kr/~bitl/image/content/content4-4a.jpg"><br> Figure1. Convex hull and Concave hull</p>
+                        <p><strong>2. Download<br></strong>
+                            <a href="dkuCH_20110113.zip" download> dkuCH.zip </a><br><br>
+                            
+                            <i><b>The zip file contents:</b></i>
+                            <br>Source Code
+                            <br>- dkuCH.java
+                            <br>- CombinationGenerator.java 
+                            <br>- Simeq.java
+                            <br>Class File
+                            <br>- dkuCH.class
+                            <br>- CombinationGenerator.class
+                            <br>- Simeq.class
+                            <br>Qhull Executable File
+                            <br>- qconvex.exe 
+                            <br>In order to make 
+                            convex hull list, qconvex.exe is used. Source code and introduction of 
+                            qhull is provided on the web site of qhull. <a href="http://www.qhull.org/" target="blank"> http://www.qhull.org/</a>
+                            </p>
+                            <p></p>
+                            <p>
+                                <strong>3. Usage</strong>
+                                <br>More informations are included in ReadMe.txt about input data &amp; output data.
+                            </p>
+                            <p><font size="2" face="Verdana"><b>Format of Execution: </b>
+                                <br>java dkuCH [option] ([convex list file]) [original data file] [output file]
+                                </font>
+                            </p>
+                            <p><font size="2" face="Verdana"><b>Options:</b>
+                                <br>-p using original data file
+                                <br>you have to use this option when you have only dataset. we will 
+                                make convex hull list by qhull algorithm. and then make concave hull. the 
+                                options of qhull algorithm is fixed.
+                                </font>
+                            </p>
+                            <p><font size="2" face="Verdana">-f using existing convex list file
+                                    <br>if you already have convex hull list via MATLAB or another 
+                                    methods, you can use this option. we will make concave 
+                                    hull.
+                                    </font>
+                            </p>
+                            <p><font size="2" face="Verdana"><b>Examples</b> 
+                                <br>java dkuCH -p 2d_dataset.txt concaveResult
+                                <br>java dkuCH -p 2d_dataset.txt concaveResult 0.9
+                                <br>java dkuCH -f convexList.txt 2d_dataset.txt concaveResult
+                                <br>java dkuCH -f convexList.txt 2d_dataset.txt concaveResult 1.2
+                                </font>
+                            </p>
+                            <p><font size="2" face="Verdana"><b>Sample Dataset</b>
+                            </font></p>
+                            <p><font size="2" face="Verdana">Original dataset | Concave List
+                                    <br><a href="http://user.dankook.ac.kr/~bitl/files/2d_dataset.txt" target="blank">2d_dataset</a> | <a href="http://user.dankook.ac.kr/~bitl/files/2d_output_ccvList" target="blank">2d_output_ccvList</a>
+                                    <br><a href="http://user.dankook.ac.kr/~bitl/files/3d_dataset.txt" target="blank">3d_dataset</a> | <a href="http://user.dankook.ac.kr/~bitl/files/3d_output_ccvList" target="blank">3d_output_ccvList</a>
+                                    <br><a href="http://user.dankook.ac.kr/~bitl/files/4d_dataset.txt" target="blank">4d_dataset</a> | <a href="http://user.dankook.ac.kr/~bitl/files/4d_output_ccvList" target="blank">face=Verdana&gt;4d_output_ccvList</a>
+                                    </font>
+                                    <br><br><br><br>
+                                </p>
+                        <h3>The Degree of Concaveness </h3>
+                        <h4>(dkuCH_concaveness)</h4>
+                        <font size="2" face="Verdana">
+                                <p>
+                                    <strong><font size="3">1. Introduction</font></strong> <br>
+                                </p>
+                            </font>
+                            <p>
+                                <font size="2" face="Verdana">The degree of concaveness is calculated based 
+                                    on the difference between the convex hull and concave hull. the red area 
+                                    between the convex hull and concave hull implies concaveness of the 
+                                    dataset. The concaveness measure CM is the ratio of convex hull and 
+                                    concave hull: </font>
+                                </p>
+                                <p align="center">
+                                    <font size="2" face="Verdana"><img alt="content3" src="http://user.dankook.ac.kr/~bitl/image/content/content4-4b.jpg"> 
+                                    <br>Figure2. The example of concaveness <br>CM (c) = 0.2242 <br>
+                                    </font>
+                                </p>
+                                <p>
+                                    <font size="2" face="Verdana">The concaveness graph is a two-dimensional 
+                                        graph that shows the concaveness of each ��edge�� of the convex hull. In the 
+                                        graph, the x axis contains the edges of the concave hull and the y axis 
+                                        expresses the degree of concaveness for each edge.
+                                    </font>
+                                </p>
+                                <p align="center">
+                                    <font size="2" face="Verdana"><img alt="content3" src="http://user.dankook.ac.kr/~bitl/image/content/content4-4c.jpg">
+                                    <br>Figure3. The example of concaveness graph</font>
+                                </p>
+                                <p>
+                                    <font size="2" face="Verdana"><strong><font size="3">2. Download</font></strong>
+                                    <br><a href="dkuCH_Concaveness_20110113.zip" download>dkuCH_Concaveness.zip </a>
+                                    
+                                    </font>
+                                </p>
+                                <p><font size="2" face="Verdana"><font size="3"><strong>3. Usage</strong></font>
+                                    <br><b>Format of Excution: </b>
+                                    <br>java dkuCH_Concaveness [option] ([convex list file]) [original data file] [output file] ([Threshold])
+                                    
+                                    <br><br><b>Options:</b> <i>same as above</i>
+                                    <br>-p using original data file
+                                    <br>you have to use this option 
+                                    when you have only dataset. we will make convex hull list by qhull 
+                                    algorithm. and then make concave hull. the options of qhull algorithm is 
+                                    fixed.
+                                    <br><br>-f using existing convex list file
+                                    <br>if you already have 
+                                    convex hull list via MATLAB or another methods, you can use this option. 
+                                    we will make concave hull.
+                                    <br><br><b>Examples</b> <i>same as above</i>
+                                    <br>java dkuCH_concaveness -p 2d_dataset.txt concaveResult
+                                    <br>java dkuCH_concaveness -p 2d_dataset.txt concaveResult 0.9
+                                    <br>java dkuCH_concaveness -f convexList.txt 2d_dataset.txt concaveResult
+                                    <br>java dkuCH_concaveness -f convexList.txt 2d_dataset.txt concaveResult 1.2
+                                    <br><br><b>Sample Dataset</b> <i>same as above</i>
+                                    <br><br>Original dataset | Concave List
+                                    <br><a href="http://user.dankook.ac.kr/~bitl/files/2d_dataset.txt" target="blank">2d_dataset</a> | <a href="http://user.dankook.ac.kr/~bitl/files/2d_output_ccvList" target="blank">2d_output_ccvList</a>
+                                    <br><a href="http://user.dankook.ac.kr/~bitl/files/3d_dataset.txt" target="blank">3d_dataset</a> | <a href="http://user.dankook.ac.kr/~bitl/files/3d_output_ccvList" target="blank">3d_output_ccvList</a>
+                                    <br><a href="http://user.dankook.ac.kr/~bitl/files/4d_dataset.txt" target="blank">4d_dataset</a> | <a href="http://user.dankook.ac.kr/~bitl/files/4d_output_ccvList" target="blank">4d_output_ccvList</a>
+                                    
+                                    </font>
+                                </p>
+                                <p align="left">
+                                    <font size="2" face="Verdana"><font size="2" face="Verdana"><font size="3"><strong>4. Citation Request: <br></strong></font><br>
+                                    Jinseo Park, Sejong Oh, A new concave hull algorithm and concaveness measure for n-dimensional datasets, journal of information science and engineering.
+                                    </font></font>
+                                </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    </body>
+</html>

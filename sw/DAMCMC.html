@@ -1,0 +1,168 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>DAMC-MC</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link rel="stylesheet" type="text/css" href="../css/template_index.css">
+    </head>
+    <body>
+            <div>
+                    <div id="back"><img src="../img/bitl.png"></div>
+                    <div class="navbar">
+                        <div class="navbar-inner">
+                          
+                          <ul class="nav">
+                            <li><a href="../index.html">HOME</a></li>
+                            <li><a href="../introduction/introduction.html">Intreoduction</a></li>
+                            <li><a href="../professor/professor.html">Professor</a></li>
+                            <li><a href="../members/members.html">Members</a></li>
+                            <li><a href="../research/research_journal.html">Research</a></li>
+                            <li><a href="../education/education.html">Education</a></li>
+                            <li class="active"><a href="../sw/software.html">Software</a></li>
+                          </ul>
+                        </div>
+            </div>
+            <div class="board">
+
+            <div class="menu">
+                <ul class="nav nav-pills nav-stacked">
+                    <li>
+                        <a href="./software.html">BIO SOFTWARE</a>
+                    </li>
+                    <li>
+                       <a href="./balancedSampling.html">balancedSampling</a>
+                    </li>
+                </ul>
+            </div>
+        <h3>[ Concave Hull ]</h3>
+        <table>
+            <tbody>
+                <tr>
+                    <td>
+                        <p><font size="2" face="Verdana"><font size="3"><strong>1. Introduction 
+      <br><br></strong></font>DAMC-MC is a method contains both feature selection and classification scheme. It can be applied for any classification algorithm. The divide-and-merge technique is a technique which deals with problem in a way to separate the problem into multiple task and work on each separated problem.
+      Then merge solved separate problem to make a final decision. </font>
+                        </p>
+                        <p align="left"><font size="2" face="Verdana"><font size="3"><strong>2. Method</strong></font>
+	  
+                        </font>
+                        </p>
+                        <p><font size="2" face="Verdana"><font size="2" face="Verdana">	
+                                <b>Steps of DAMC-MC classification:</b><br>
+                                </font></font>
+                        </p>
+                        <ul>
+                            <font size="2" face="Verdana"><font size="2" face="Verdana">
+                                <li>Prepare class-adjusted datasets from the original dataset<font size="2">(<i>the left side of Figure 1 </i>)</font>
+                                </li><li>Apply feature selection and make feature-selected datasets <font size="2">(<i>the right side of Figure 1 </i>)</font>
+                                </li><li>Calculate support degrees of each class using new datasets. <font size="2">(<i>Figure 2 and 3 </i>)</font>
+                                </li><li>Merge support degrees and decide the class of the unclassified instance. 
+                              </li></font></font>
+                        </ul>
+                        <font size="2" face="Verdana"><font size="2" face="Verdana">
+                            </font>
+                            <p></p>
+                        <p align="center"><font size="2" face="Verdana"><img width="80%" heigh="90%" src="figure1.PNG"><br>Figure 1. Prepare class-adjusted datasets from the original dataset</font></p><br>
+                        <p align="center"><font size="2" face="Verdana"><img width="80%" heigh="80%" src="figure2.PNG"><br>Figure 2. Calculating support degree for each class and merge process</font></p>			  
+                        <p align="center"><font size="2" face="Verdana"><img width="55%" heigh="55%" src="figure3.PNG"><br>Figure 3. An example of calculating support degrees</font>
+                        </p>
+                        </font>
+                        <p></p>
+                        <br>
+                        <p align="left"><font size="2" face="Verdana"><font size="3"><strong>3. Programs<br></strong></font>
+	  	    
+                            </font>
+                        </p>
+                        <ul>
+                            <li>
+                                <font size="2" face="Verdana"> <a href="program_whole-program.zip" download>Whole programs and datasets</a> <br></font>
+                            </li>
+                        </ul>
+                        <font size="2" face="Verdana">
+	    
+                                <i><b>Folder description:</b></i>
+                                <br> <ul><li> <a href="program_damc_mc.zip" download>damc_mc</a>: Contains DAMC-MC method <br></li></ul>	
+                                <br>- DamClassifiers.java
+                                <br>- FeatureRanking.java 
+                                <br>- FeatureScoring.java
+                                <br>- kfoldTestDAMC.java
+                                <br>- kfoldTest.java 
+                                <br>- parameter.txt - User defined txt File
+                                <br>- runDAMC.bat - executable Batch file  <br><br>
+                                <b>Note</b><br>
+                               <ol type="1">
+                                <ul><li>parameter.txt file contains user defined variables <br>
+                                   Note: put the numbers after each colon in each line <br><br>
+                                   line 1: NO_OF_FOLD:  <font size="1">[number of fold]</font><br>
+                                   line 2: NO_OF_REPEAT: <font size="1">[number of repeat for Kfold test]</font> <br>
+                                   line 3: CLASSIFIER: <font size="1"> [KNN-1, KStar-2, SVM-3, NaiveBayes-4, LogisticRegression-5]</font><br>
+                                   line 4: FEATURE_SELECTION:  <font size="1"> [Relief-1, GrainRatio-2, FS-SVM-3, FS-KNN-4]</font><br>
+                                   line 3: SELECTED_FEATURE: <font size="1"> [number of selected feature]</font><br>
+                                   line 4: KNN:  <font size="1"> [number of nearest neighbors for KNN classification]</font><br>
+                                </li></ul>
+                                </ol>
+                                <ol type="1">
+                                 <ul><li>runDAMC.bat file executable batch file <br><br>
+                                 <b>Format of Execution: </b>
+                                 <br>java kfoldTestDAMC [input data file] 
+                                 </li></ul>
+                                </ol>
+                                
+                                <ul><li> <a href="program_normal.zip" download>normal</a>: Contains Normal classification and Feature selection methods <br></li></ul>	
+                                <br>- Classifiers.java 	  
+                                <br>- FeatureRanking.java 
+                                <br>- FeatureScoring.java
+                                <br>- kfoldTestNormal.java
+                                <br>- parameter.txt - User defined txt File
+                                <br>- run.bat - executable Batch file  
+                                
+                                 <ul><li> <a href="program_javalm_package.zip" download>javalm_package</a>: Contains javaml and weka packages <br></li></ul>	
+                                 <br> DAMC-MC and Normal methods use these packages. You should put them into C -&gt; Program Files -&gt; Java -&gt; JRE -&gt; lib -&gt; ext.
+                                 
+                                <br> <ul><li> <a href="program_dataset.zip" download>dataset</a>: Contains 10 datasets: 5 Gene expression and 5 other biological data </li></ul>	
+                                <br>  
+                                  <ol type="1">
+                                      Gene expression datasets: GDS1027, GDS2545, GDS2546, GDS2547, GDS3715
+                                <br>  Other biological datasets: DLBCL, Lung, MLL, multi_tissues, SRBCT
+                                <br><br>
+                                  </ol>
+                                  
+                                 <b>Note</b><br>
+                                 
+                               <ol type="1">
+                                  <li>Dataset should be .csv format. 
+                                  </li><li>Only numerical vaule is allowed for dataset. 
+                                  </li><li>First column of dataset should be class(category) data and shold have continuous value beginning with 0.(0,1,2,3,...)  
+                               </li></ol><br>
+                               
+                               
+                               <p><font size="2" face="Verdana"><font size="3"><strong>4. Results of Classification test using Normal and DAMC-MC methods<br></strong></font>	</font></p><font size="2" face="Verdana"> 
+                               <ol type="1">
+                               <ul><li> <a href="result_GDS1027.pdf" download>GDS1027</a> <br></li></ul>	
+                               <ul><li> <a href="result_GDS2545.pdf" download>GDS2545</a> <br></li></ul>	
+                               <ul><li> <a href="result_GDS2546.pdf" download>GDS2546</a><br></li></ul>	
+                               <ul><li> <a href="result_GDS2547.pdf" download>GDS2547</a><br></li></ul>
+                               <ul><li> <a href="result_GDS3715.pdf" download>GDS3715</a><br></li></ul>	
+                               <ul><li> <a href="result/DLBCL.pdf" download>DLBCL</a><br></li></ul>
+                               <ul><li> <a href="result_Lung.pdf" download>Lung</a> <br></li></ul>	
+                               <ul><li> <a href="result_MLL.pdf" download>MLL</a> <br></li></ul>
+                               <ul><li> <a href="result_multi_tissues.pdf" download>multi_tissues</a><br></li></ul>	
+                               <ul><li> <a href="result_SRBCT.pdf" download>SRBCT</a><br></li></ul>
+                               </ol>
+                               
+                                <ol type="1">
+                                  The numbers 5, 10, 20, 30, and 40 in the tables denote the number of selected features for the test. The 'Normal' column means the normal feature selection method, which does not apply the DAMC approach.  
+                               </ol><br>
+                               <!-- P align=left><FONT size=2 face=Verdana><FONT size=3><STRONG>5. Citation Request: <BR></STRONG></FONT><BR></p>
+                                Ariundelger Gantulga, Minseok Seo and Sejong Oh*, Divide and Merge Classification for High Dimensional Multi-Class Datasets.
+                                <p -->
+                                <b>*** Contact email: sejongoh @ dankook . ac . kr</b>
+                                </font></font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    </body>
+</html>
