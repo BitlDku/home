@@ -39,21 +39,11 @@
             </div>
         
     <div class="content">  
-        <h3>[ Balanced Train/Test set sampling ]</h3>
+        <h3>[Prediction performance based feature interaction]</h3>
         <h4>1. introduction</h4>
 
         <div>
-            <p>In machine learning, classification is the technique of identifying to which categories or classes a new observation belongs, 
-                based on a training set. The performance of a classification model is generally measured by classification 
-                accuracy of a test set. The first step of developing a classification model is to divide the obtained 
-                whole dataset into training and test sets by random sampling. In general, random sampling does not 
-                guarantee that test accuracy reflects performance of a developed classification model. If random sampling 
-                makes biased training/test sets, classification model may produce biased accuracy. In this study, 
-                we show the problems of random sampling, and propose balanced sampling as an alternative to random 
-                sampling. We also propose a measure for evaluating sampling methods. We perform empirical experiments 
-                to verify our sampling algorithm produces proper training/test sets using benchmark datasets. 
-                The results confirm that our method leads to better training/test sets than random sampling and 
-                several non-random sampling methods.</p>
+            <p>There has been considerable development in machine learning, which has resulted in several successful applications. Although these methods offer high performance, the interpretation of learning models still remains challenging. Understanding the underlying theory behind the specific prediction of various models is difficult. Various studies have attempted to explain the working principle behind learning models using techniques like feature importance, partial dependency, feature interaction, and the Shapley value. This study introduces a new feature interaction measure. While previous studies have measured feature interaction using partial dependency, this study redefines feature interaction using prediction performance. The proposed measure is easy to interpret, is faster than partial dependency-based measures, and can be used to explain feature interaction in both regression and classification models. </p>
             <img width="100%" height="100%" src="figure2.jpg">
             <div allign="center">Figure1. Pseudo Code of balanced sampling</div>
         </div>
@@ -61,14 +51,11 @@
         <h4>2. Download</h4>
         <div>
             <ul>
-                <li>Source code of balanced sampling : 
-                    <a href="balancedSampling.R" download> balancedSampling.R</a>
+                <li>Source code of feature interaction library :
+                    <a href="f_interact_lib.R" download> f interact lib.R</a>
                 </li>
-                <li>Test code of balanced sampling :
-                    <a href="test.R" download> test.R</a>
-                </li>
-                <li>Sample dataset :
-                    <a href="dataset.csv" download>dataset</a>
+                <li>Test code of feature interaction library :
+                    <a href="test_f_interact.R" download> test f interact.R</a>
                 </li>
             </ul>
         </div>
@@ -78,15 +65,14 @@
             <ol>
                 <li>Install <a href="https://cran.r-project.org/bin/windows/base/">R software.</a></li>
                 <li>Run R software.</li>
+                <li>Install required R packages</li>
                 <li>Run test code in R console.</li>
             </ol>
-            <p>※We assume all downloaded files are in 'c:\works' folder.</p>
+            <p>※We assume all downloaded files are in 'D:\rworks' folder.</p>
         </div>
         <br>
-        <h4>4. citation request</h4>
         <div>
-            <p>[Author], Balanced Training/Test Set Sampling for Proper Evaluation of Classification Models, 
-                [institution], [page]</p>
+            <p>See the running result of test code <a href="./test_fi.nb.html">here.</a></p>
         </div>
         </div>
     </div>  
