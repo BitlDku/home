@@ -2,22 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="340159b6-ee79-4c85-96e9-92dcb35c5176" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/rSettings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/rSettings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sw/AGM.html" beforeDir="false" afterPath="$PROJECT_DIR$/sw/AGM.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sw/AmRMR.html" beforeDir="false" afterPath="$PROJECT_DIR$/sw/AmRMR.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sw/CBFS.html" beforeDir="false" afterPath="$PROJECT_DIR$/sw/CBFS.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sw/ConcaveHull.html" beforeDir="false" afterPath="$PROJECT_DIR$/sw/ConcaveHull.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sw/DAMCMC.html" beforeDir="false" afterPath="$PROJECT_DIR$/sw/DAMCMC.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sw/FindBiomarker.html" beforeDir="false" afterPath="$PROJECT_DIR$/sw/FindBiomarker.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sw/R-value.html" beforeDir="false" afterPath="$PROJECT_DIR$/sw/R-value.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sw/RFS.html" beforeDir="false" afterPath="$PROJECT_DIR$/sw/RFS.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sw/SpinalCord.html" beforeDir="false" afterPath="$PROJECT_DIR$/sw/SpinalCord.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sw/balancedSampling.html" beforeDir="false" afterPath="$PROJECT_DIR$/sw/balancedSampling.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sw/boostMDR.html" beforeDir="false" afterPath="$PROJECT_DIR$/sw/boostMDR.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sw/f_interaction.html" beforeDir="false" afterPath="$PROJECT_DIR$/sw/f_interaction.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sw/haploFinder.html" beforeDir="false" afterPath="$PROJECT_DIR$/sw/haploFinder.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sw/postDiscretization.html" beforeDir="false" afterPath="$PROJECT_DIR$/sw/postDiscretization.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sw/software.html" beforeDir="false" afterPath="$PROJECT_DIR$/sw/software.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sw/Hybrid_RFE.html" beforeDir="false" afterPath="$PROJECT_DIR$/sw/Hybrid_RFE.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sw/test_hybrid_rfe.R" beforeDir="false" afterPath="$PROJECT_DIR$/sw/test_hybrid_rfe.R" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,11 +30,13 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/sw" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\wjdeo\OneDrive\바탕 화면\home\sw" />
       <recent name="C:\Users\72200137\Desktop\home\sw" />
       <recent name="C:\Users\72200137\Desktop\home\sw\img" />
     </key>
@@ -62,6 +52,7 @@
       <option name="presentableId" value="Default" />
       <updated>1556643834246</updated>
       <workItem from="1587090873133" duration="808000" />
+      <workItem from="1587350220811" duration="485000" />
     </task>
     <servers />
   </component>
@@ -69,9 +60,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="532" y="329" key="com.intellij.ide.util.TipDialog" timestamp="1587090874959">
-      <screen x="0" y="0" width="1680" height="1010" />
+    <state x="608" y="339" width="612" height="352" key="com.intellij.ide.util.TipDialog" timestamp="1587350581242">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="608" y="339" width="612" height="352" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587350581242" />
     <state x="532" y="329" key="com.intellij.ide.util.TipDialog/1680.0.1680.1010/0.0.1680.1010@0.0.1680.1010" timestamp="1587090874959" />
   </component>
 </project>
