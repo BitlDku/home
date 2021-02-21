@@ -1,61 +1,64 @@
 <!doctype html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>balancedSampling</title>
-        <link href="../css/bootstrap.min.css" rel="stylesheet" media="screen">
-        <link rel="stylesheet" type="text/css" href="../css/template_index.css">
-    </head>
-    <body>
-        <div>
-            <div><img src="../img/bitl.png"></div>
-            <div class="navbar">
-                <div class="navbar-inner">       
-                    <ul class="nav">
-                        <li><a href="../index.html">HOME</a></li>
-                        <li><a href="../introduction/introduction.html">Intreoduction</a></li>
-                        <li><a href="../professor/professor.html">Professor</a></li>
-                        <li><a href="../members/members.html">Members</a></li>
-                        <li><a href="../research/research_journal.html">Research</a></li>
-                        <li><a href="../education/education.html">Education</a></li>
-                        <li class="active"><a href="../sw/software.html">Software</a></li>
-                    </ul>
-                </div>
-            </div>
+<head>
+    <meta charset="utf-8">
+    <title>balancedSampling</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" type="text/css" href="../css/template_index.css">
+</head>
+<body>
+<div>
+    <div><img src="../img/bitl.png"></div>
+    <div class="navbar">
+        <div class="navbar-inner">
+            <ul class="nav">
+                <li><a href="../index.html">HOME</a></li>
+                <li><a href="../introduction/introduction.html">Intreoduction</a></li>
+                <li><a href="../professor/professor.html">Professor</a></li>
+                <li><a href="../members/members.html">Members</a></li>
+                <li><a href="../research/research_journal.html">Research</a></li>
+                <li><a href="../education/education.html">Education</a></li>
+                <li class="active"><a href="../sw/software.html">Software</a></li>
+            </ul>
         </div>
-        <div class="board">
-            <div class="menu">
-                <ul class="nav nav-pills nav-stacked">
-                    <li>
-                        <a href="./software.html">BIO SOFTWARE</a>
-                    </li>
-                    <li>
-                        <a href="./balancedSampling.html">balancedSampling</a>
-                    </li>
-                    <li>
-                        <a href="./f_interaction.html">f_interaction</a>
-                    </li>
-                    <li>
-                        <a href="./Hybrid_RFE.html">Hybrid RFE</a>
-                    </li>
-                </ul>
-            </div>
-        
-    <div class="content">  
+    </div>
+</div>
+<div class="board">
+    <div class="menu">
+        <ul class="nav nav-pills nav-stacked">
+            <li>
+                <a href="./software.html">BIO SOFTWARE</a>
+            </li>
+            <li>
+                <a href="./balancedSampling.html">balancedSampling</a>
+            </li>
+            <li>
+                <a href="./f_interaction.html">f_interaction</a>
+            </li>
+            <li>
+                <a href="./Hybrid_RFE.html">Hybrid RFE</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="content">
         <h3>[ Balanced Train/Test set sampling ]</h3>
         <h4>1. introduction</h4>
 
         <div>
-            <p>In machine learning, classification is the technique of identifying to which categories or classes a new observation belongs, 
-                based on a training set. The performance of a classification model is generally measured by classification 
-                accuracy of a test set. The first step of developing a classification model is to divide the obtained 
-                whole dataset into training and test sets by random sampling. In general, random sampling does not 
-                guarantee that test accuracy reflects performance of a developed classification model. If random sampling 
-                makes biased training/test sets, classification model may produce biased accuracy. In this study, 
-                we show the problems of random sampling, and propose balanced sampling as an alternative to random 
-                sampling. We also propose a measure for evaluating sampling methods. We perform empirical experiments 
-                to verify our sampling algorithm produces proper training/test sets using benchmark datasets. 
-                The results confirm that our method leads to better training/test sets than random sampling and 
+            <p>In machine learning, classification is the technique of identifying to which categories or classes a new
+                observation belongs,
+                based on a training set. The performance of a classification model is generally measured by
+                classification
+                accuracy of a test set. The first step of developing a classification model is to divide the obtained
+                whole dataset into training and test sets by random sampling. In general, random sampling does not
+                guarantee that test accuracy reflects performance of a developed classification model. If random
+                sampling
+                makes biased training/test sets, classification model may produce biased accuracy. In this study,
+                we show the problems of random sampling, and propose balanced sampling as an alternative to random
+                sampling. We also propose a measure for evaluating sampling methods. We perform empirical experiments
+                to verify our sampling algorithm produces proper training/test sets using benchmark datasets.
+                The results confirm that our method leads to better training/test sets than random sampling and
                 several non-random sampling methods.</p>
             <img width="100%" height="100%" src="figure2.jpg">
             <div allign="center">Figure1. Pseudo Code of balanced sampling</div>
@@ -64,7 +67,7 @@
         <h4>2. Download</h4>
         <div>
             <ul>
-                <li>Source code of balanced sampling : 
+                <li>Source code of balanced sampling :
                     <a href="balancedSampling.R" download> balancedSampling.R</a>
                 </li>
                 <li>Test code of balanced sampling :
@@ -88,10 +91,10 @@
         <br>
         <h4>4. citation request</h4>
         <div>
-            <p>[Author], Balanced Training/Test Set Sampling for Proper Evaluation of Classification Models, 
+            <p>[Author], Balanced Training/Test Set Sampling for Proper Evaluation of Classification Models,
                 [institution], [page]</p>
         </div>
-        </div>
-    </div>  
-    </body>
+    </div>
+</div>
+</body>
 </html>

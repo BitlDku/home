@@ -1,92 +1,120 @@
 <!doctype html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Finding Biomarker</title>
-        <link href="../css/bootstrap.min.css" rel="stylesheet" media="screen">
-        <link rel="stylesheet" type="text/css" href="../css/template_index.css">
-    </head>
-    <body>
-            <div>
-                    <div id="back"><img src="../img/bitl.png"></div>
-                    <div class="navbar">
-                        <div class="navbar-inner">
-                          
-                          <ul class="nav">
-                            <li><a href="../index.html">HOME</a></li>
-                            <li><a href="../introduction/introduction.html">Intreoduction</a></li>
-                            <li><a href="../professor/professor.html">Professor</a></li>
-                            <li><a href="../members/members.html">Members</a></li>
-                            <li><a href="../research/research_journal.html">Research</a></li>
-                            <li><a href="../education/education.html">Education</a></li>
-                            <li class="active"><a href="../sw/software.html">Software</a></li>
-                          </ul>
-                        </div>
-            </div>
-            <div class="board">
+<head>
+    <meta charset="utf-8">
+    <title>Finding Biomarker</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" type="text/css" href="../css/template_index.css">
+</head>
+<body>
+<div>
+    <div id="back"><img src="../img/bitl.png"></div>
+    <div class="navbar">
+        <div class="navbar-inner">
 
-            <div class="menu">
-                <ul class="nav nav-pills nav-stacked">
-                    <li>
-                        <a href="./software.html">BIO SOFTWARE</a>
-                    </li>
-                    <li>
-                        <a href="./balancedSampling.html">balancedSampling</a>
-                    </li>
-                    <li>
-                        <a href="./f_interaction.html">f_interaction</a>
-                    </li>
-                    <li>
-                        <a href="./Hybrid_RFE.html">Hybrid RFE</a>
-                    </li>
-                </ul>
-            </div>
+            <ul class="nav">
+                <li><a href="../index.html">HOME</a></li>
+                <li><a href="../introduction/introduction.html">Intreoduction</a></li>
+                <li><a href="../professor/professor.html">Professor</a></li>
+                <li><a href="../members/members.html">Members</a></li>
+                <li><a href="../research/research_journal.html">Research</a></li>
+                <li><a href="../education/education.html">Education</a></li>
+                <li class="active"><a href="../sw/software.html">Software</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="board">
+
+        <div class="menu">
+            <ul class="nav nav-pills nav-stacked">
+                <li>
+                    <a href="./software.html">BIO SOFTWARE</a>
+                </li>
+                <li>
+                    <a href="./balancedSampling.html">balancedSampling</a>
+                </li>
+                <li>
+                    <a href="./f_interaction.html">f_interaction</a>
+                </li>
+                <li>
+                    <a href="./Hybrid_RFE.html">Hybrid RFE</a>
+                </li>
+            </ul>
+        </div>
         <h3>[ Feature Selection Library for Biomarker Identification ]</h3>
         <table>
             <tbody>
-                <tr>
-                        <td>
-                                <p><font size="2" face="Verdana"><font size="3"><strong>1. Introduction 
-                                <br></strong></font>One of important application of gene expression data is to find significant genes related with specific disease such as lung cancer. These significant genes may be used as biomarker to diagnose the disease. Data mining approach is useful to find the biomarker and perform diagnosis. Feature selection and classification schemes are widely used for the purpose. In this study, we suggest data mining approach for finding biomarker genes based on microarray dataset. Proposed approach contains procedural steps to finding and testing biomarker genes. We also implement the proposed method as R library for general usage. We test 12 microarray datasets using implemented library, and suggest best biomarker genes and proper predictor (classifier) for each of them. One of identified biomarker genes is compared with differentially expressed gene list including biological network analysis. </font></p>
-                               
-                                <p><font size="2" face="Verdana"><font size="3"><strong>1. Process of disease diagnosis using biomarker</strong></font>
-                                </font></p><p align="center"><font size="2" face="Verdana"><img width="100%" heigh="100%" src="fig_1.png"></font></p><font size="2" face="Verdana">
-                          
-                                <p><font size="2" face="Verdana"><font size="3"><strong>2. Overall steps of procedure to find biomarker </strong></font>
-                                </font></p><p align="center"><font size="2" face="Verdana"><img width="40%" heigh="40%" src="fig_2.png"></font></p><font size="2" face="Verdana">
-                          
-                                <p align="left"><font size="2" face="Verdana"><font size="3"><strong>3. Usage<br></strong></font><br><br>
-                                <b>Format of input dataset: </b><br><br>
-                                The dataset should be .csv format. Columns are genes and rows are samples in the data table. First column expresses phenotype of samples for target disease. The dataset may contain gene name or gene id in the first row.<br><br>
-                                 </font></p><p align="center"><font size="2" face="Verdana"><img width="90%" heigh="90%" src="fig_3.png"></font></p><font size="2" face="Verdana">
-                          
-                                <b>Execution</b><br><br>
-                                - modify main.R to designate file name of dataset and parameter setting <br>
-                                - User can choose sort of algorithms that he/she wants to test through parameter setting<br>
-                                - Execute main.R <br><br>
-                          
-                                <b>Result</b><br><br>
-                                - view RESULT_TOTAL.csv file in 'result' directory <br>
-                                <p align="center"><img width="60%" heigh="60%" src="fig_4.png"></p>
-                          
-                                <p align="left"><font size="2" face="Verdana"><font size="3"><strong>3. Download R source code<br></strong></font><br>
-                                </font></p><ul><font size="2" face="Verdana">
-                                   <li><a href="published_code_20150121.zip" download>published_code_20150121.zip</a><br>
-                                </li></font></ul><font size="2" face="Verdana">
-                                <b>Sample Dataset</b><br><br>
-                                <ul>
-                                   <li><a href="ALL.csv" target="blank">ALL.csv</a><br>
-                                </li></ul>
-                               </font><p></p>
-                               
-                               <!--P align=left><FONT size=2 face=Verdana><FONT 
-                                size=3><STRONG>4. Citation Request: <BR></STRONG></FONT><BR>
-                                Sejong Oh, A new dataset evaluation method based on category overlap, Computers in Biology and Medicine, 41 (2011) 115-122.-->
-                           
-                                </font></font></font></td>
-                </tr>
+            <tr>
+                <td>
+                    <p><font size="2" face="Verdana"><font size="3"><strong>1. Introduction
+                        <br></strong></font>One of important application of gene expression data is to find significant
+                        genes related with specific disease such as lung cancer. These significant genes may be used as
+                        biomarker to diagnose the disease. Data mining approach is useful to find the biomarker and
+                        perform diagnosis. Feature selection and classification schemes are widely used for the purpose.
+                        In this study, we suggest data mining approach for finding biomarker genes based on microarray
+                        dataset. Proposed approach contains procedural steps to finding and testing biomarker genes. We
+                        also implement the proposed method as R library for general usage. We test 12 microarray
+                        datasets using implemented library, and suggest best biomarker genes and proper predictor
+                        (classifier) for each of them. One of identified biomarker genes is compared with differentially
+                        expressed gene list including biological network analysis. </font></p>
+
+                    <p><font size="2" face="Verdana"><font size="3"><strong>1. Process of disease diagnosis using
+                        biomarker</strong></font>
+                    </font></p>
+                    <p align="center"><font size="2" face="Verdana"><img width="100%" heigh="100%"
+                                                                         src="fig_1.png"></font></p><font size="2"
+                                                                                                          face="Verdana">
+
+                    <p><font size="2" face="Verdana"><font size="3"><strong>2. Overall steps of procedure to find
+                        biomarker </strong></font>
+                    </font></p>
+                    <p align="center"><font size="2" face="Verdana"><img width="40%" heigh="40%" src="fig_2.png"></font>
+                    </p><font size="2" face="Verdana">
+
+                    <p align="left"><font size="2" face="Verdana"><font size="3"><strong>3.
+                        Usage<br></strong></font><br><br>
+                        <b>Format of input dataset: </b><br><br>
+                        The dataset should be .csv format. Columns are genes and rows are samples in the data table.
+                        First column expresses phenotype of samples for target disease. The dataset may contain gene
+                        name or gene id in the first row.<br><br>
+                    </font></p>
+                    <p align="center"><font size="2" face="Verdana"><img width="90%" heigh="90%" src="fig_3.png"></font>
+                    </p><font size="2" face="Verdana">
+
+                    <b>Execution</b><br><br>
+                    - modify main.R to designate file name of dataset and parameter setting <br>
+                    - User can choose sort of algorithms that he/she wants to test through parameter setting<br>
+                    - Execute main.R <br><br>
+
+                    <b>Result</b><br><br>
+                    - view RESULT_TOTAL.csv file in 'result' directory <br>
+                    <p align="center"><img width="60%" heigh="60%" src="fig_4.png"></p>
+
+                    <p align="left"><font size="2" face="Verdana"><font size="3"><strong>3. Download R source
+                        code<br></strong></font><br>
+                    </font></p>
+                    <ul><font size="2" face="Verdana">
+                        <li><a href="published_code_20150121.zip" download>published_code_20150121.zip</a><br>
+                        </li>
+                    </font></ul>
+                    <font size="2" face="Verdana">
+                        <b>Sample Dataset</b><br><br>
+                        <ul>
+                            <li><a href="ALL.csv" target="blank">ALL.csv</a><br>
+                            </li>
+                        </ul>
+                    </font>
+                    <p></p>
+
+                    <!--P align=left><FONT size=2 face=Verdana><FONT
+                     size=3><STRONG>4. Citation Request: <BR></STRONG></FONT><BR>
+                     Sejong Oh, A new dataset evaluation method based on category overlap, Computers in Biology and Medicine, 41 (2011) 115-122.-->
+
+                </font></font></font></td>
+            </tr>
             </tbody>
         </table>
     </div>
-    </body>
+</div>
+</body>
 </html>

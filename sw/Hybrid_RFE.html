@@ -1,53 +1,60 @@
 <!doctype html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Hybird_RFE</title>
-        <link href="../css/bootstrap.min.css" rel="stylesheet" media="screen">
-        <link rel="stylesheet" type="text/css" href="../css/template_index.css">
-    </head>
-    <body>
-        <div>
-            <div><img src="../img/bitl.png"></div>
-            <div class="navbar">
-                <div class="navbar-inner">       
-                    <ul class="nav">
-                        <li><a href="../index.html">HOME</a></li>
-                        <li><a href="../introduction/introduction.html">Intreoduction</a></li>
-                        <li><a href="../professor/professor.html">Professor</a></li>
-                        <li><a href="../members/members.html">Members</a></li>
-                        <li><a href="../research/research_journal.html">Research</a></li>
-                        <li><a href="../education/education.html">Education</a></li>
-                        <li class="active"><a href="../sw/software.html">Software</a></li>
-                    </ul>
-                </div>
-            </div>
+<head>
+    <meta charset="utf-8">
+    <title>Hybird_RFE</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" type="text/css" href="../css/template_index.css">
+</head>
+<body>
+<div>
+    <div><img src="../img/bitl.png"></div>
+    <div class="navbar">
+        <div class="navbar-inner">
+            <ul class="nav">
+                <li><a href="../index.html">HOME</a></li>
+                <li><a href="../introduction/introduction.html">Intreoduction</a></li>
+                <li><a href="../professor/professor.html">Professor</a></li>
+                <li><a href="../members/members.html">Members</a></li>
+                <li><a href="../research/research_journal.html">Research</a></li>
+                <li><a href="../education/education.html">Education</a></li>
+                <li class="active"><a href="../sw/software.html">Software</a></li>
+            </ul>
         </div>
-        <div class="board">
-            <div class="menu">
-                <ul class="nav nav-pills nav-stacked">
-                    <li>
-                        <a href="./software.html">BIO SOFTWARE</a>
-                    </li>
-                    <li>
-                        <a href="./balancedSampling.html">balancedSampling</a>
-                    </li>
-                    <li>
-                        <a href="./f_interaction.html">f_interaction</a>
-                    </li>
-                    <li>
-                        <a href="./Hybrid_RFE.html">Hybrid RFE</a>
-                    </li>
-                </ul>
-            </div>
-        
-    <div class="content">  
+    </div>
+</div>
+<div class="board">
+    <div class="menu">
+        <ul class="nav nav-pills nav-stacked">
+            <li>
+                <a href="./software.html">BIO SOFTWARE</a>
+            </li>
+            <li>
+                <a href="./balancedSampling.html">balancedSampling</a>
+            </li>
+            <li>
+                <a href="./f_interaction.html">f_interaction</a>
+            </li>
+            <li>
+                <a href="./Hybrid_RFE.html">Hybrid RFE</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="content">
         <h3>[Hybrid Recursive Feature Elimination]</h3>
         <h4>1. introduction</h4>
 
         <div>
-            <p>As data size has increased nowadays, it is important to select optimal subset from original dataset to get a best performance of machine learning task. High dimensional datasets that have too many features can cause low performance of the task. Overfitting is a typical problem. Also, they have some problem such as shortage of space, requirement of high computing power, and low classification accuracy. Thus, it is necessary to select representative subset of features by efficient selection method.
-Many feature selection methods have been proposed. Recursive feature elimination (RFE) is one of them. This paper proposes a hybrid-recursive feature elimination. It combines feature importance-based recursive feature elimination using support vector machine (SVM), random forest (RF), and generalized boosted regression (GBM) algorithms. Figure 1 summarizes two types hybrid-RFE algorithm.</p>
+            <p>As data size has increased nowadays, it is important to select optimal subset from original dataset to
+                get a best performance of machine learning task. High dimensional datasets that have too many features
+                can cause low performance of the task. Overfitting is a typical problem. Also, they have some problem
+                such as shortage of space, requirement of high computing power, and low classification accuracy. Thus,
+                it is necessary to select representative subset of features by efficient selection method.
+                Many feature selection methods have been proposed. Recursive feature elimination (RFE) is one of them.
+                This paper proposes a hybrid-recursive feature elimination. It combines feature importance-based
+                recursive feature elimination using support vector machine (SVM), random forest (RF), and generalized
+                boosted regression (GBM) algorithms. Figure 1 summarizes two types hybrid-RFE algorithm.</p>
             <img width="70%" height="70%" src="img/Hybrid_RFE_Figure_1.png">
             <div allign="center">Figure 1. process of Hybrid-RFE</div>
         </div>
@@ -80,7 +87,7 @@ Many feature selection methods have been proposed. Recursive feature elimination
                 <a href="test_hybrid_rfe.html">here</a>
             </p>
         </div>
-        </div>
-    </div>  
-    </body>
+    </div>
+</div>
+</body>
 </html>

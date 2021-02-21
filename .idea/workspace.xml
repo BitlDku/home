@@ -2,45 +2,84 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="340159b6-ee79-4c85-96e9-92dcb35c5176" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/rSettings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/rSettings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/education/education.html" beforeDir="false" afterPath="$PROJECT_DIR$/education/education.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/introduction/introduction.html" beforeDir="false" afterPath="$PROJECT_DIR$/introduction/introduction.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/members/alumni.html" beforeDir="false" afterPath="$PROJECT_DIR$/members/alumni.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/members/members.html" beforeDir="false" afterPath="$PROJECT_DIR$/members/members.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/professor/professor.html" beforeDir="false" afterPath="$PROJECT_DIR$/professor/professor.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/research/research_book.html" beforeDir="false" afterPath="$PROJECT_DIR$/research/research_book.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/research/research_conference.html" beforeDir="false" afterPath="$PROJECT_DIR$/research/research_conference.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/research/research_journal.html" beforeDir="false" afterPath="$PROJECT_DIR$/research/research_journal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/research/research_project.html" beforeDir="false" afterPath="$PROJECT_DIR$/research/research_project.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sw/AGM.html" beforeDir="false" afterPath="$PROJECT_DIR$/sw/AGM.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sw/AmRMR.html" beforeDir="false" afterPath="$PROJECT_DIR$/sw/AmRMR.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sw/CBFS.html" beforeDir="false" afterPath="$PROJECT_DIR$/sw/CBFS.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sw/ConcaveHull.html" beforeDir="false" afterPath="$PROJECT_DIR$/sw/ConcaveHull.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sw/DAMCMC.html" beforeDir="false" afterPath="$PROJECT_DIR$/sw/DAMCMC.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sw/FindBiomarker.html" beforeDir="false" afterPath="$PROJECT_DIR$/sw/FindBiomarker.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sw/Hybrid_RFE.html" beforeDir="false" afterPath="$PROJECT_DIR$/sw/Hybrid_RFE.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sw/test_hybrid_rfe.R" beforeDir="false" afterPath="$PROJECT_DIR$/sw/test_hybrid_rfe.R" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sw/R-value.html" beforeDir="false" afterPath="$PROJECT_DIR$/sw/R-value.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sw/RFS.html" beforeDir="false" afterPath="$PROJECT_DIR$/sw/RFS.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sw/SpinalCord.html" beforeDir="false" afterPath="$PROJECT_DIR$/sw/SpinalCord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sw/balancedSampling.html" beforeDir="false" afterPath="$PROJECT_DIR$/sw/balancedSampling.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sw/boostMDR.html" beforeDir="false" afterPath="$PROJECT_DIR$/sw/boostMDR.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sw/f_interaction.html" beforeDir="false" afterPath="$PROJECT_DIR$/sw/f_interaction.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sw/haploFinder.html" beforeDir="false" afterPath="$PROJECT_DIR$/sw/haploFinder.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sw/postDiscretization.html" beforeDir="false" afterPath="$PROJECT_DIR$/sw/postDiscretization.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sw/software.html" beforeDir="false" afterPath="$PROJECT_DIR$/sw/software.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sw/test_fi.nb.html" beforeDir="false" afterPath="$PROJECT_DIR$/sw/test_fi.nb.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sw/test_hybrid_rfe.html" beforeDir="false" afterPath="$PROJECT_DIR$/sw/test_hybrid_rfe.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-2" />
-    <option name="width" value="974" />
-    <option name="height" value="1047" />
-  </component>
+  <component name="JupyterTrust" id="adb90304-c52e-4068-9032-2390e61f3218" />
   <component name="ProjectId" id="1aeKxmNstWf6zp2jzOt4pFSVVJy" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/sw" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\wjdeo\OneDrive\바탕 화면\home\data" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\wjdeo\OneDrive\바탕 화면\home\sw" />
       <recent name="C:\Users\72200137\Desktop\home\sw" />
       <recent name="C:\Users\72200137\Desktop\home\sw\img" />
     </key>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -53,17 +92,18 @@
       <updated>1556643834246</updated>
       <workItem from="1587090873133" duration="808000" />
       <workItem from="1587350220811" duration="485000" />
+      <workItem from="1613918556351" duration="3619000" />
+      <workItem from="1613922583638" duration="1858000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="608" y="339" width="612" height="352" key="com.intellij.ide.util.TipDialog" timestamp="1587350581242">
+    <state x="640" y="255" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1613918569164">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="608" y="339" width="612" height="352" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587350581242" />
-    <state x="532" y="329" key="com.intellij.ide.util.TipDialog/1680.0.1680.1010/0.0.1680.1010@0.0.1680.1010" timestamp="1587090874959" />
+    <state x="640" y="255" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1613918569164" />
   </component>
 </project>

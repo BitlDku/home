@@ -1,115 +1,132 @@
 <!doctype html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Post-Processing for discretization</title>
-        <link href="../css/bootstrap.min.css" rel="stylesheet" media="screen">
-        <link rel="stylesheet" type="text/css" href="../css/template_index.css">
-    </head>
-    <body>
-            <div>
-                    <div id="back"><img src="../img/bitl.png"></div>
-                    <div class="navbar">
-                        <div class="navbar-inner">
-                          
-                          <ul class="nav">
-                            <li><a href="../index.html">HOME</a></li>
-                            <li><a href="../introduction/introduction.html">Intreoduction</a></li>
-                            <li><a href="../professor/professor.html">Professor</a></li>
-                            <li><a href="../members/members.html">Members</a></li>
-                            <li><a href="../research/research_journal.html">Research</a></li>
-                            <li><a href="../education/education.html">Education</a></li>
-                            <li class="active"><a href="../sw/software.html">Software</a></li>
-                          </ul>
-                        </div>
-            </div>
-            <div class="board">
+<head>
+    <meta charset="utf-8">
+    <title>Post-Processing for discretization</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" type="text/css" href="../css/template_index.css">
+</head>
+<body>
+<div>
+    <div id="back"><img src="../img/bitl.png"></div>
+    <div class="navbar">
+        <div class="navbar-inner">
 
-            <div class="menu">
-                <ul class="nav nav-pills nav-stacked">
-                    <li>
-                        <a href="./software.html">BIO SOFTWARE</a>
-                    </li>
-                    <li>
-                        <a href="./balancedSampling.html">balancedSampling</a>
-                    </li>
-                    <li>
-                        <a href="./f_interaction.html">f_interaction</a>
-                    </li>
-                    <li>
-                        <a href="./Hybrid_RFE.html">Hybrid RFE</a>
-                    </li>
-                </ul>
-            </div>
+            <ul class="nav">
+                <li><a href="../index.html">HOME</a></li>
+                <li><a href="../introduction/introduction.html">Intreoduction</a></li>
+                <li><a href="../professor/professor.html">Professor</a></li>
+                <li><a href="../members/members.html">Members</a></li>
+                <li><a href="../research/research_journal.html">Research</a></li>
+                <li><a href="../education/education.html">Education</a></li>
+                <li class="active"><a href="../sw/software.html">Software</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="board">
+
+        <div class="menu">
+            <ul class="nav nav-pills nav-stacked">
+                <li>
+                    <a href="./software.html">BIO SOFTWARE</a>
+                </li>
+                <li>
+                    <a href="./balancedSampling.html">balancedSampling</a>
+                </li>
+                <li>
+                    <a href="./f_interaction.html">f_interaction</a>
+                </li>
+                <li>
+                    <a href="./Hybrid_RFE.html">Hybrid RFE</a>
+                </li>
+            </ul>
+        </div>
         <h3>[ Post-Processing for discretization ]</h3>
         <table>
             <tbody>
-                <tr>
-                    <td>
-                            <div align="left">
-                                    
+            <tr>
+                <td>
+                    <div align="left">
+
+                        <br>
+                        <br>
+                        <font size="2" face="Verdana">
+                            <font size="3">
+                                <strong>1. Introduction
                                     <br>
-                                    <br>
-                                    <font size="2" face="Verdana">
-                                    <font size="3">
-                                    <strong>1. Introduction 
-                                    <br>
-                                    </strong>
+                                </strong>
+                            </font>
+                        </font>
+                        </p>
+                        <font size="2" face="Verdana">
+
+                            <p>
+
+                                Bioinformatics and data mining require data analysis schemes. Many methods of analysis,
+                                such as those focusing on entropy, have been developed and assume that the input data
+                                has discrete values. Therefore, when using continuous data, discretization needs to be
+                                performed before analysis can begin. Many discretization algorithms have been proposed,
+                                and these discretize a given dataset attribute-by-attribute. Although such methods
+                                assume that the attributes are independent from each other, in reality these attributes
+                                interact with and influence the results of the analysis as a group, not individually. In
+                                this paper we propose a post-processing method that can improve the quality of
+                                discretization. After the normal discretization process, we adjust the boundary point of
+                                the discretization for each attribute, and then after evaluating the group effect of the
+                                adjusted point, we update the original boundary point by adjusting it if it has a
+                                positive influence on the attribute. The results of the empirical experiments show that
+                                the adjusted dataset improves the classification accuracy.
+                            </p>
+                            <br>
+
+                        </font>
+                        <div align="left">
+                            <font size="2" face="Verdana">
+                                <br>
+                            </font>
+                            <br>
+
+                            <p>
+                                <strong>
+                                    <font size="3" face="Verdana">
+                                        2. Supplementary Materials<br>
                                     </font>
+                                </strong><br>
+                                <font size="2" face="Verdana">
+                                </font></p>
+                            <ul><font size="2" face="Verdana">
+                                <li><a href="post.discretizeLib.R">post.discretizeLib.R </a> : includes functions for
+                                    post discretization <br>
+                                </li>
+                                <li><a href="test.post.discretizeLib.R">test.post.discretizeLib.R </a> : Test code for
+                                    post.discretizeLib<br>
+                                </li>
+                            </font></ul>
+                            <font size="2" face="Verdana">
+                            </font>
+                            <br>
+                            <p></p>
+
+
+                            <p>
+                                <strong>
+                                    <font size="3" face="Verdana">
+                                        3. Reference<br>
                                     </font>
-                                    </p>
-                                    <font size="2" face="Verdana">
-                                          
-                                    <p>
-                                         
-                                        Bioinformatics and data mining require data analysis schemes. Many methods of analysis, such as those focusing on entropy, have been developed and assume that the input data has discrete values. Therefore, when using continuous data, discretization needs to be performed before analysis can begin. Many discretization algorithms have been proposed, and these discretize a given dataset attribute-by-attribute. Although such methods assume that the attributes are independent from each other, in reality these attributes interact with and influence the results of the analysis as a group, not individually. In this paper we propose a post-processing method that can improve the quality of discretization. After the normal discretization process, we adjust the boundary point of the discretization for each attribute, and then after evaluating the group effect of the adjusted point, we update the original boundary point by adjusting it if it has a positive influence on the attribute. The results of the empirical experiments show that the adjusted dataset improves the classification accuracy.
-                                    </p>
-                                    <br>
-                                          
-                                    </font>
-                                    <div align="left">
-                                    <font size="2" face="Verdana">
-                                    <br>
-                                    </font>
-                                    <br>
-                                    
-                                    <p>
-                                        <strong>
-                                        <font size="3" face="Verdana">
-                                            2. Supplementary Materials<br>
-                                            </font>
-                                        </strong><br>
-                                        <font size="2" face="Verdana">
-                                        </font></p><ul><font size="2" face="Verdana">
-                                            <li><a href="post.discretizeLib.R">post.discretizeLib.R </a> : includes functions for post discretization <br>  
-                                            </li><li><a href="test.post.discretizeLib.R">test.post.discretizeLib.R </a> : Test code for post.discretizeLib<br>  
-                                        </li></font></ul><font size="2" face="Verdana">
-                                        </font>
-                                        <br>
-                                    <p></p>
-                                    
-                                    
-                                    <p>
-                                        <strong>
-                                        <font size="3" face="Verdana">
-                                            3. Reference<br>
-                                            </font>
-                                        </strong>
-                                        <font size="2" face="Verdana">
-                                            (to be added)
-                                        </font>
-                                        <br>
-                                    </p>
-                                    
-                                    
-                                    
-                                    
-                                    </div>
-                                </div>
-                    </td>
-                </tr>
+                                </strong>
+                                <font size="2" face="Verdana">
+                                    (to be added)
+                                </font>
+                                <br>
+                            </p>
+
+
+                        </div>
+                    </div>
+                </td>
+            </tr>
             </tbody>
         </table>
     </div>
-    </body>
+</div>
+</body>
 </html>

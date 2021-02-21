@@ -1,101 +1,146 @@
 <!doctype html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Spinal Cord</title>
-        <link href="../css/bootstrap.min.css" rel="stylesheet" media="screen">
-        <link rel="stylesheet" type="text/css" href="../css/template_index.css">
-    </head>
-    <body>
-            <div>
-                    <div id="back"><img src="../img/bitl.png"></div>
-                    <div class="navbar">
-                        <div class="navbar-inner">
-                          
-                          <ul class="nav">
-                            <li><a href="../index.html">HOME</a></li>
-                            <li><a href="../introduction/introduction.html">Intreoduction</a></li>
-                            <li><a href="../professor/professor.html">Professor</a></li>
-                            <li><a href="../members/members.html">Members</a></li>
-                            <li><a href="../research/research_journal.html">Research</a></li>
-                            <li><a href="../education/education.html">Education</a></li>
-                            <li class="active"><a href="../sw/software.html">Software</a></li>
-                          </ul>
-                        </div>
-            </div>
-            <div class="board">
+<head>
+    <meta charset="utf-8">
+    <title>Spinal Cord</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" type="text/css" href="../css/template_index.css">
+</head>
+<body>
+<div>
+    <div id="back"><img src="../img/bitl.png"></div>
+    <div class="navbar">
+        <div class="navbar-inner">
+            <ul class="nav">
+                <li><a href="../index.html">HOME</a></li>
+                <li><a href="../introduction/introduction.html">Intreoduction</a></li>
+                <li><a href="../professor/professor.html">Professor</a></li>
+                <li><a href="../members/members.html">Members</a></li>
+                <li><a href="../research/research_journal.html">Research</a></li>
+                <li><a href="../education/education.html">Education</a></li>
+                <li class="active"><a href="../sw/software.html">Software</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="board">
 
-            <div class="menu">
-                <ul class="nav nav-pills nav-stacked">
-                    <li>
-                        <a href="./software.html">BIO SOFTWARE</a>
-                    </li>
-                    <li>
-                        <a href="./balancedSampling.html">balancedSampling</a>
-                    </li>
-                    <li>
-                        <a href="./f_interaction.html">f_interaction</a>
-                    </li>
-                    <li>
-                        <a href="./Hybrid_RFE.html">Hybrid RFE</a>
-                    </li>
-                </ul>
-            </div>
+        <div class="menu">
+            <ul class="nav nav-pills nav-stacked">
+                <li>
+                    <a href="./software.html">BIO SOFTWARE</a>
+                </li>
+                <li>
+                    <a href="./balancedSampling.html">balancedSampling</a>
+                </li>
+                <li>
+                    <a href="./f_interaction.html">f_interaction</a>
+                </li>
+                <li>
+                    <a href="./Hybrid_RFE.html">Hybrid RFE</a>
+                </li>
+            </ul>
+        </div>
         <h3>[ Spinal Cord ]</h3>
         <table>
             <tbody>
-                <tr>
-                    <td>
-                        <p><font size="2" face="Verdana"><font size="3"><strong>1. Introduction 
-                            <br></strong></font>
-                      
-                          A Diffusion Tensor Image (DTI) is an in vivo image which describes extracellular structures by measuring the diffusion of water molecules. It captures axonal movement and orientation using echo-planar imaging and is capable of providing critical information for evaluating lesions and structural damage in the central nervous system, which is important for the prediction of spinal cord injury and for assessment of patients who are recovering from such injuries. In this study, we aimed to classify healthy individuals and patients using fractional anisotropy (FA) values within regions of interest. We abstract FA values from patients with chronic cervical spinal cord injuries and healthy controls using DTI data. We divided each cervical spinal cord slice into four directions (anterior, posterior, left, and right) and calculate FA values. These are resource to build the dataset for our study. We also aimed to classify spinal cord slices into normal and patient. We deploy feature selection and classification schemes to predict/classify injured spinal cord. The proposed method yields over 90% accuracy and can be used to support clinical examination. 
-                            </font>
-                        </p>
-                        <p align="center"><font size="2" face="Verdana"><img width="60%" heigh="60%" src="fig1.jpg"><br>Figure1. Preview of the classification analysis procedure for the new dataset</font>
-                        </p>
-                        <p></p>
-                        <p align="center"><font size="2" face="Verdana"><img width="80%" heigh="80%" src="fig2.jpg"><br>Figure2. Divided spinal cord regions (Red: Posterior, Green: Anterior, Blue: Left, Yellow: Right)</font>
-                        </p>
-                        <p align="center"><font size="2" face="Verdana"><img width="80%" heigh="80%" src="fig3.jpg"><br>Figure3. The graph of the accuracy by each feature using KNN algorithms with k = 5</font>
-                        </p>
-                        <p align="left"><font size="2" face="Verdana"><font size="3"><strong>3. Download Datasets<br></strong></font><br>
-                            <font size="2" face="Verdana">
+            <tr>
+                <td>
+                    <p><font size="2" face="Verdana"><font size="3"><strong>1. Introduction
+                        <br></strong></font>
+
+                        A Diffusion Tensor Image (DTI) is an in vivo image which describes extracellular structures by
+                        measuring the diffusion of water molecules. It captures axonal movement and orientation using
+                        echo-planar imaging and is capable of providing critical information for evaluating lesions and
+                        structural damage in the central nervous system, which is important for the prediction of spinal
+                        cord injury and for assessment of patients who are recovering from such injuries. In this study,
+                        we aimed to classify healthy individuals and patients using fractional anisotropy (FA) values
+                        within regions of interest. We abstract FA values from patients with chronic cervical spinal
+                        cord injuries and healthy controls using DTI data. We divided each cervical spinal cord slice
+                        into four directions (anterior, posterior, left, and right) and calculate FA values. These are
+                        resource to build the dataset for our study. We also aimed to classify spinal cord slices into
+                        normal and patient. We deploy feature selection and classification schemes to predict/classify
+                        injured spinal cord. The proposed method yields over 90% accuracy and can be used to support
+                        clinical examination.
+                    </font>
+                    </p>
+                    <p align="center"><font size="2" face="Verdana"><img width="60%" heigh="60%" src="fig1.jpg"><br>Figure1.
+                        Preview of the classification analysis procedure for the new dataset</font>
+                    </p>
+                    <p></p>
+                    <p align="center"><font size="2" face="Verdana"><img width="80%" heigh="80%" src="fig2.jpg"><br>Figure2.
+                        Divided spinal cord regions (Red: Posterior, Green: Anterior, Blue: Left, Yellow: Right)</font>
+                    </p>
+                    <p align="center"><font size="2" face="Verdana"><img width="80%" heigh="80%" src="fig3.jpg"><br>Figure3.
+                        The graph of the accuracy by each feature using KNN algorithms with k = 5</font>
+                    </p>
+                    <p align="left"><font size="2" face="Verdana"><font size="3"><strong>3. Download
+                        Datasets<br></strong></font><br>
+                        <font size="2" face="Verdana">
                             <b>Abbreviation:</b>
-                            
-                            </font></font>
-                        </p>
-                        <ul><font size="2" face="Verdana"><font size="2" face="Verdana">
-                                <li> Posterior (P), Anterior (A), Left (L), and Right (R). 
-                                
-                                </li><li> Person ID: Patient (P), Normal Control (N)
-                                
-                                </li><li> Class Name: Patient (0), Normal Control (1)
-                                </li></font></font>
-                        </ul>
-                        <p><font size="2" face="Verdana"><font size="2" face="Verdana">
-                                <table border="1">
-                                    <tbody><tr><td><font size="2" face="Verdana"><b><center>Dataset</center></b></font></td><td><font size="2" face="Verdana"><b><center>Column Description</center></b></font></td></tr>
-                                    <tr><td><a href="BaseDataset.csv"><font size="2" face="Verdana">BaseDataset</font></a></td><td><font size="2" face="Verdana">Four features: Person ID, Class Name, P, A, L, R</font></td></tr>
-                                    <tr><td><a href="ExtendedDataset.csv"><font size="2" face="Verdana">ExtendedDataset</font></a></td><td><font size="2" face="Verdana">Fifteen features: Person ID, Class Name, P,A,L,R,(P,A),(P,L),(P,R),(A,L),(A,R),(L,R),(P,A,L),(A,L,R),(P,A,R),(P,L,R),(P,A,L,R)</font></td></tr>
-                                    <tr><td><a href="FS_AppliedDataset.csv"><font size="2" face="Verdana">FS_AppliedDataset</font></a> </td><td><font size="2" face="Verdana">Two features: Person ID, Class Name, (A,L,R), (A,R)</font></td></tr>
-                        
-                                </tbody></table></font>
-                        
-                        
-                            
-                              
-                             </font>
-                        </p>
-                        <p align="left"><font size="2" face="Verdana"><font size="3"><strong>4. Citation Request: <br></strong></font><br>
-                            Bunheang Tay, Jung Keun Hyun, Sejong Oh, The machine learning approach for specification of spinal cord injury using the fractional anisotropy value from diffusion tensor image
-                      
-                            </font>
-                        </p>
-                    </td>
-                </tr>
+
+                        </font></font>
+                    </p>
+                    <ul><font size="2" face="Verdana"><font size="2" face="Verdana">
+                        <li> Posterior (P), Anterior (A), Left (L), and Right (R).
+
+                        </li>
+                        <li> Person ID: Patient (P), Normal Control (N)
+
+                        </li>
+                        <li> Class Name: Patient (0), Normal Control (1)
+                        </li>
+                    </font></font>
+                    </ul>
+                    <p><font size="2" face="Verdana"><font size="2" face="Verdana">
+                        <table border="1">
+                            <tbody>
+                            <tr>
+                                <td><font size="2" face="Verdana"><b>
+                                    <center>Dataset</center>
+                                </b></font></td>
+                                <td><font size="2" face="Verdana"><b>
+                                    <center>Column Description</center>
+                                </b></font></td>
+                            </tr>
+                            <tr>
+                                <td><a href="BaseDataset.csv"><font size="2" face="Verdana">BaseDataset</font></a></td>
+                                <td><font size="2" face="Verdana">Four features: Person ID, Class Name, P, A, L,
+                                    R</font></td>
+                            </tr>
+                            <tr>
+                                <td><a href="ExtendedDataset.csv"><font size="2"
+                                                                        face="Verdana">ExtendedDataset</font></a></td>
+                                <td><font size="2" face="Verdana">Fifteen features: Person ID, Class Name,
+                                    P,A,L,R,(P,A),(P,L),(P,R),(A,L),(A,R),(L,R),(P,A,L),(A,L,R),(P,A,R),(P,L,R),(P,A,L,R)</font>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><a href="FS_AppliedDataset.csv"><font size="2"
+                                                                          face="Verdana">FS_AppliedDataset</font></a>
+                                </td>
+                                <td><font size="2" face="Verdana">Two features: Person ID, Class Name, (A,L,R),
+                                    (A,R)</font></td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                    </font>
+
+
+                    </font>
+                    </p>
+                    <p align="left"><font size="2" face="Verdana"><font size="3"><strong>4. Citation Request:
+                        <br></strong></font><br>
+                        Bunheang Tay, Jung Keun Hyun, Sejong Oh, The machine learning approach for specification of
+                        spinal cord injury using the fractional anisotropy value from diffusion tensor image
+
+                    </font>
+                    </p>
+                </td>
+            </tr>
             </tbody>
         </table>
     </div>
-    </body>
+</div>
+</body>
 </html>

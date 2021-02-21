@@ -1,189 +1,220 @@
 <!doctype html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>AGM</title>
-        <link href="../css/bootstrap.min.css" rel="stylesheet" media="screen">
-        <link rel="stylesheet" type="text/css" href="../css/template_index.css">
-    </head>
-    <body>
-            <div>
-                    <div id="back"><img src="../img/bitl.png"></div>
-                    <div class="navbar">
-                        <div class="navbar-inner">
-                          
-                          <ul class="nav">
-                            <li><a href="../index.html">HOME</a></li>
-                            <li><a href="../introduction/introduction.html">Intreoduction</a></li>
-                            <li><a href="../professor/professor.html">Professor</a></li>
-                            <li><a href="../members/members.html">Members</a></li>
-                            <li><a href="../research/research_journal.html">Research</a></li>
-                            <li><a href="../education/education.html">Education</a></li>
-                            <li class="active"><a href="../sw/software.html">Software</a></li>
-                          </ul>
-                        </div>
-            </div>
-            <div class="board">
+<head>
+    <meta charset="utf-8">
+    <title>AGM</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" type="text/css" href="../css/template_index.css">
+</head>
+<body>
+<div>
+    <div id="back"><img src="../img/bitl.png"></div>
+    <div class="navbar">
+        <div class="navbar-inner">
+            <ul class="nav">
+                <li><a href="../index.html">HOME</a></li>
+                <li><a href="../introduction/introduction.html">Intreoduction</a></li>
+                <li><a href="../professor/professor.html">Professor</a></li>
+                <li><a href="../members/members.html">Members</a></li>
+                <li><a href="../research/research_journal.html">Research</a></li>
+                <li><a href="../education/education.html">Education</a></li>
+                <li class="active"><a href="../sw/software.html">Software</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="board">
 
-            <div class="menu">
-                <ul class="nav nav-pills nav-stacked">
-                    <li>
-                        <a href="./software.html">BIO SOFTWARE</a>
-                    </li>
-                    <li>
-                        <a href="./balancedSampling.html">balancedSampling</a>
-                    </li>
-                    <li>
-                        <a href="./f_interaction.html">f_interaction</a>
-                    </li>
-                    <li>
-                        <a href="./Hybrid_RFE.html">Hybrid RFE</a>
-                    </li>
-                </ul>
-            </div>
+        <div class="menu">
+            <ul class="nav nav-pills nav-stacked">
+                <li>
+                    <a href="./software.html">BIO SOFTWARE</a>
+                </li>
+                <li>
+                    <a href="./balancedSampling.html">balancedSampling</a>
+                </li>
+                <li>
+                    <a href="./f_interaction.html">f_interaction</a>
+                </li>
+                <li>
+                    <a href="./Hybrid_RFE.html">Hybrid RFE</a>
+                </li>
+            </ul>
+        </div>
         <h3>[ Artificial Gene Making(AGM) ]</h3>
         <table>
             <tbody>
-                <tr>
-                    <td>
-                        <p><font size="2" face="Verdana"><font size="3">
-                            <strong>
-                              1. Introduction <br>
-                            </strong></font>
-                              &nbsp;In this study, we suggest a new method termed AGM (artificial gene making) to complement the problem of information loss. During feature selection and dimension reduction, information loss is inevitable. We attempt to minimize the information loss by introducing an artificial gene. Figure 1 summarizes the steps of classification analysis using the AGM method. An artificial gene is combined with the gene selection or dimension reduction result, which results in the formation of a new dataset. The role of the artificial gene is to leave space among different classes of a gene selected and dimension reduced datasets. This means that the artificial gene reduces ambiguous or congested areas among classes, which leads to improved classification accuracy. In our previous study, we confirmed that a wide congestion area leads to low Accuracy (Oh, 2011). Therefore, reduction of the congestion area by AGM results in improved classification accuracy.
-                              <br><br>
-                              </font>
-                        </p>
-                        <p></p>
-                        <center><font size="2" face="Verdana">
+            <tr>
+                <td>
+                    <p><font size="2" face="Verdana"><font size="3">
+                        <strong>
+                            1. Introduction <br>
+                        </strong></font>
+                        &nbsp;In this study, we suggest a new method termed AGM (artificial gene making) to complement
+                        the problem of information loss. During feature selection and dimension reduction, information
+                        loss is inevitable. We attempt to minimize the information loss by introducing an artificial
+                        gene. Figure 1 summarizes the steps of classification analysis using the AGM method. An
+                        artificial gene is combined with the gene selection or dimension reduction result, which results
+                        in the formation of a new dataset. The role of the artificial gene is to leave space among
+                        different classes of a gene selected and dimension reduced datasets. This means that the
+                        artificial gene reduces ambiguous or congested areas among classes, which leads to improved
+                        classification accuracy. In our previous study, we confirmed that a wide congestion area leads
+                        to low Accuracy (Oh, 2011). Therefore, reduction of the congestion area by AGM results in
+                        improved classification accuracy.
+                        <br><br>
+                    </font>
+                    </p>
+                    <p></p>
+                    <center><font size="2" face="Verdana">
 
 
-                                <img src="1.JPG"><br><br>
-                                <b>Figure 1:</b> New process of classification analysis for microarray data<br><br><br>
-                                <img src="3.JPG"><br><br>
-                                <b>Figure 2:</b> Vote and predict class label for a sample data<br><br><br>
-                        
+                        <img src="1.JPG"><br><br>
+                        <b>Figure 1:</b> New process of classification analysis for microarray data<br><br><br>
+                        <img src="3.JPG"><br><br>
+                        <b>Figure 2:</b> Vote and predict class label for a sample data<br><br><br>
+
+                    </font>
+                    </center>
+                    <p></p>
+                    <p align="left"><font size="2" face="Verdana">
+                        <font size="3">
+                            <strong>2. Usage</strong>
+                        </font><br>
+
+                        More informations are included in information.txt about input data &amp; output data format.
+                        <br><br>
+
+                        <font color="blue">how to excute the program for making new dataset?</font><br><br>
+
+                        1. Download the Alpha.zip, Make Dataset.zip file.<br>
+                        2. These file included *.class, information.txt, Run.bat file<br><br>
+
+                        3-1
+                        <alpha.zip> From Training-dataset.<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<b>First</b>, read the information file. This file have a
+                            comment.<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<b>Second</b>, according to the comment, write down the filename,
+                            and information.<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;(**You must delete the comment)<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<b>Finally</b>, after save the information.txt file, excute the
+                            Run.bat at the windows command line<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;we can get a alpha-value.<br><br>
+
+                            3-2
+                            <calculated b-value=""> From test-dataset.<br>
+                            </calculated>
+                        </alpha.zip>
+                    </font>
+                    </p>
+                    <center><font size="2" face="Verdana">
+                        <img src="4.JPG"><br><br>
+                        <img src="2.JPG"><br><br>
+                    </font>
+                    </center>
+                    <font size="2" face="Verdana">
+                        &nbsp;&nbsp;&nbsp;&nbsp;Detailed formulas included paper.<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;We use a Microsoft excel statistical analysis tools<br><br>
+
+                        3-3
+                        <make dataset.zip=""> using the whole dataset(Original, and feature selection dataset(Training&amp;Test)<br><br>
+
+                            &nbsp;&nbsp;&nbsp;&nbsp;<t><b>First</b>, read the information file. This file have a
+                                comment.<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<b>Second</b>, according to the comment, write down the are as
+                                follow<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;(**You must delete the comment)<br><br>
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;information.txt&gt;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Training_smoke.csv<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Test_smoke.csv<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Training_smoke_feature_20_RFS.csv<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Test_smoke_feature_20_RFS.csv<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;900<br><br>
+
+                                <font color="blue">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Line1 : Original training
+                                    dataset<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Line2 : Original test dataset<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Line3 : Feature selection training
+                                    dataset<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Line4 : Feature selection test
+                                    dataset<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Line5 : B-value<br><br>
                                 </font>
-                        </center>
-                        <p></p>
-                        <p align="left"><font size="2" face="Verdana">
-                                <font size="3">
-                                    <strong>2. Usage</strong>
-                                </font><br>
-                                
-                                    More informations are included in information.txt about input data &amp; output data format. <br><br>
-                             
-                                    <font color="blue">how to excute the program for making new dataset?</font><br><br>
-                            
-                                    1. Download the Alpha.zip, Make Dataset.zip file.<br>
-                                    2. These file included *.class, information.txt, Run.bat file<br><br>
-                            
-                                    3-1 <alpha.zip> From Training-dataset.<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;<b>First</b>, read the information file. This file have a comment.<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;<b>Second</b>, according to the comment, write down the filename, and information.<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;(**You must delete the comment)<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;<b>Finally</b>, after save the information.txt file, excute the Run.bat at the windows command line<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;we can get a alpha-value.<br><br>
-                            
-                                    3-2 <calculated b-value=""> From test-dataset.<br>
-                                    </calculated></alpha.zip></font>
-                        </p>
-                        <center><font size="2" face="Verdana">
-                                <img src="4.JPG"><br><br>
-                                <img src="2.JPG"><br><br>
-                                </font>
-                        </center>
-                        <font size="2" face="Verdana">
-                                &nbsp;&nbsp;&nbsp;&nbsp;Detailed formulas included paper.<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;We use a Microsoft excel statistical analysis tools<br><br>
-              
-                      3-3 <make dataset.zip=""> using the whole dataset(Original, and feature selection dataset(Training&amp;Test)<br><br>
-                             
-                          &nbsp;&nbsp;&nbsp;&nbsp;<t><b>First</b>, read the information file. This file have a comment.<br>
-                          &nbsp;&nbsp;&nbsp;&nbsp;<b>Second</b>, according to the comment, write down the are as follow<br>
-                          &nbsp;&nbsp;&nbsp;&nbsp;(**You must delete the comment)<br><br>
-              
-                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;information.txt&gt;<br>
-                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Training_smoke.csv<br>
-                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Test_smoke.csv<br>
-                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Training_smoke_feature_20_RFS.csv<br>
-                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Test_smoke_feature_20_RFS.csv<br>
-                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;900<br><br>
-              
-                          <font color="blue">
-                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Line1 : Original training dataset<br>
-                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Line2 : Original test dataset<br>
-                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Line3 : Feature selection training dataset<br>
-                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Line4 : Feature selection test dataset<br>
-                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Line5 : B-value<br><br>
-                          </font>
-                          &nbsp;&nbsp;&nbsp;&nbsp;Finally, after save the information.txt file, excute the Run.bat<br>
-                          &nbsp;&nbsp;&nbsp;&nbsp;We can get a new dataset, and KNN class predict result, when k=3<br><br><br>
-                                
-                      
-                  </t></make></font>
-                  <p></p>
-                  <p align="left"><font size="2" face="Verdana">
+                                &nbsp;&nbsp;&nbsp;&nbsp;Finally, after save the information.txt file, excute the Run.bat<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;We can get a new dataset, and KNN class predict result, when k=3<br><br><br>
+
+
+                            </t>
+                        </make>
+                    </font>
+                    <p></p>
+                    <p align="left"><font size="2" face="Verdana">
                         <font size="3">
                             <strong>3. Download</strong>
                         </font><br>
-                          
-                            <a href="Alpha.zip">Alpha.zip</a><br>
-                    
-                            <a href="make dataset.zip">make dataset.zip</a><br><br>
-                    
-                            <b><i>The Alpha.zip file contents: </i></b><br>
-                            Class File<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;- alpha.class<br>
-                            Executable File<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;- run.bat <br>
-                            Input File<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;- information.txt<br><br>
-                    
-                    
-                            <b>The Make Dataset.zip file contents:</b><br>
-                            Class File<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;- Aknn.class<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;- Knn.class<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;- makeDataset.class<br>
-                            Executable File<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;- run.bat <br>
-                            Input File<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;- information.txt<br><br>
-                    
-                            <b>Sample Dataset</b><br>
-                    
-                             - <a href="smoke.zip">smoke.zip</a><br><br>   
-                    
-                                &nbsp;&nbsp;&nbsp;&nbsp;This file have a four data.<br>
-                                 
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. Training_smoke.csv //Original smoke training dataset <br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. Test_smoke.csv //Original smoke test dataset<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3. Training_smoke_feature_20_RFS.csv //feature-selection training dataset using RFS algorithm.<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4. Test_smoke_feature_20_RFS.csv //feature-selection test dataset using RFS algorithm.<br><br>
-                                
-                                &nbsp;&nbsp;&nbsp;&nbsp;We get a Beta value in this dataset is 900<br><br><br>
-                    
-                        </font>
+
+                        <a href="Alpha.zip">Alpha.zip</a><br>
+
+                        <a href="make dataset.zip">make dataset.zip</a><br><br>
+
+                        <b><i>The Alpha.zip file contents: </i></b><br>
+                        Class File<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;- alpha.class<br>
+                        Executable File<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;- run.bat <br>
+                        Input File<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;- information.txt<br><br>
+
+
+                        <b>The Make Dataset.zip file contents:</b><br>
+                        Class File<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;- Aknn.class<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;- Knn.class<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;- makeDataset.class<br>
+                        Executable File<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;- run.bat <br>
+                        Input File<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;- information.txt<br><br>
+
+                        <b>Sample Dataset</b><br>
+
+                        - <a href="smoke.zip">smoke.zip</a><br><br>
+
+                        &nbsp;&nbsp;&nbsp;&nbsp;This file have a four data.<br>
+
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. Training_smoke.csv //Original smoke training
+                        dataset <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. Test_smoke.csv //Original smoke test
+                        dataset<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3. Training_smoke_feature_20_RFS.csv
+                        //feature-selection training dataset using RFS algorithm.<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4. Test_smoke_feature_20_RFS.csv
+                        //feature-selection test dataset using RFS algorithm.<br><br>
+
+                        &nbsp;&nbsp;&nbsp;&nbsp;We get a Beta value in this dataset is 900<br><br><br>
+
+                    </font>
                     </p>
                     <p align="left"><font size="2" face="Verdana">
-                            <font size="3"><strong>
-                                4. Citation Request: 
-                            </strong></font><br>
-                            </font>
+                        <font size="3"><strong>
+                            4. Citation Request:
+                        </strong></font><br>
+                    </font>
                     </p>
                     <li>
                         <font size="2" face="Verdana">
-                            Minseok Seo, Sejong Oh*, Derivation of an artificial gene to improve classification accuracy upon gene selection., Comput. Biol. Chem., Vol 36 (2012), pp. 1–12
+                            Minseok Seo, Sejong Oh*, Derivation of an artificial gene to improve classification accuracy
+                            upon gene selection., Comput. Biol. Chem., Vol 36 (2012), pp. 1–12
                             <br>
                             <a href="http://dx.doi.org/10.1016/j.compbiolchem.2011.11.002">http://dx.doi.org/10.1016/j.compbiolchem.2011.11.002</a>
-                            
+
                         </font>
                     </li>
-                    </td>
-                </tr>
+                </td>
+            </tr>
             </tbody>
         </table>
     </div>
-    </body>
+</div>
+</body>
 </html>

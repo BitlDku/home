@@ -1,132 +1,154 @@
 <!doctype html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Boosting MDR</title>
-        <link href="../css/bootstrap.min.css" rel="stylesheet" media="screen">
-        <link rel="stylesheet" type="text/css" href="../css/template_index.css">
-    </head>
-    <body>
-            <div>
-                    <div id="back"><img src="../img/bitl.png"></div>
-                    <div class="navbar">
-                        <div class="navbar-inner">
-                          
-                          <ul class="nav">
-                            <li><a href="../index.html">HOME</a></li>
-                            <li><a href="../introduction/introduction.html">Intreoduction</a></li>
-                            <li><a href="../professor/professor.html">Professor</a></li>
-                            <li><a href="../members/members.html">Members</a></li>
-                            <li><a href="../research/research_journal.html">Research</a></li>
-                            <li><a href="../education/education.html">Education</a></li>
-                            <li class="active"><a href="../sw/software.html">Software</a></li>
-                          </ul>
-                        </div>
-            </div>
-            <div class="board">
+<head>
+    <meta charset="utf-8">
+    <title>Boosting MDR</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" type="text/css" href="../css/template_index.css">
+</head>
+<body>
+<div>
+    <div id="back"><img src="../img/bitl.png"></div>
+    <div class="navbar">
+        <div class="navbar-inner">
 
-            <div class="menu">
-                <ul class="nav nav-pills nav-stacked">
-                    <li>
-                        <a href="./software.html">BIO SOFTWARE</a>
-                    </li>
-                    <li>
-                        <a href="./balancedSampling.html">balancedSampling</a>
-                    </li>
-                    <li>
-                        <a href="./f_interaction.html">f_interaction</a>
-                    </li>
-                    <li>
-                        <a href="./Hybrid_RFE.html">Hybrid RFE</a>
-                    </li>
-                </ul>
-            </div>
+            <ul class="nav">
+                <li><a href="../index.html">HOME</a></li>
+                <li><a href="../introduction/introduction.html">Intreoduction</a></li>
+                <li><a href="../professor/professor.html">Professor</a></li>
+                <li><a href="../members/members.html">Members</a></li>
+                <li><a href="../research/research_journal.html">Research</a></li>
+                <li><a href="../education/education.html">Education</a></li>
+                <li class="active"><a href="../sw/software.html">Software</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="board">
+
+        <div class="menu">
+            <ul class="nav nav-pills nav-stacked">
+                <li>
+                    <a href="./software.html">BIO SOFTWARE</a>
+                </li>
+                <li>
+                    <a href="./balancedSampling.html">balancedSampling</a>
+                </li>
+                <li>
+                    <a href="./f_interaction.html">f_interaction</a>
+                </li>
+                <li>
+                    <a href="./Hybrid_RFE.html">Hybrid RFE</a>
+                </li>
+            </ul>
+        </div>
         <h3>[ Boosting MDR ]</h3>
         <table>
             <tbody>
-                <tr>
-                    <td>
-                            <div align="left">
+            <tr>
+                <td>
+                    <div align="left">
+                        <br>
+                        <br>
+                        <font size="2" face="Verdana">
+                            <font size="3">
+                                <strong>1. Introduction
                                     <br>
-                                    <br>
-                                    <font size="2" face="Verdana">
-                                    <font size="3">
-                                    <strong>1. Introduction 
-                                    <br>
-                                    </strong>
+                                </strong>
+                            </font>
+                        </font>
+                        </p>
+                        <font size="2" face="Verdana">
+
+                            <p>
+                                Detecting gene-gene interactions during genetic studies of common human diseases is
+                                important, and multifactor dimensionality reduction has been widely applied to these
+                                ends. However, this technique is not free from the "curse of dimensionality" since it
+                                works well for two- or three-way interaction but requires a long execution time and
+                                extensive computing resources to detect a 10-way interaction. In this paper, we propose
+                                a boosting method that reduces the execution time of multifactor dimensionality
+                                reduction by using pre-evaluation measurements to remove gene sets that have low
+                                interaction before applying the reduction to the remaining sets. The proposed method
+                                reduces the problem space and induces an extreme saving in execution time.
+                            </p>
+                            <br>
+                            <br>
+                            <p align="center">
+                                <img src="Bfigure1.jpg" width="405" height="431"><br><br>
+                                Figure1. Idea of boosting MDR
+                            </p>
+
+                        </font>
+                        <div align="left">
+                            <font size="2" face="Verdana">
+                                <br>
+                            </font>
+                            <br>
+
+                            <p>
+                                <strong>
+                                    <font size="3" face="Verdana">
+                                        2. Pre-evaluation function<br>
                                     </font>
+                                </strong>
+                                <font size="2" face="Verdana">
+                                    Let's suppose Z = {S1, S2, …, Sk} where Si is a SNP and P is a phenotype. We compose
+                                    the pre-evaluation function as follows:.<br>
+                                    <img src="Bfigure2.jpg"><br>
+                                </font></p>
+                            <center><font size="2" face="Verdana"><img src="Bfigure3.jpg" width="798"
+                                                                       height="282"><br><br>
+                                Figure2. An example of DF() calculation</font></center>
+                            <font size="2" face="Verdana">
+                            </font>
+                            <br>
+                            <p></p>
+
+
+                            <p>
+                                <strong>
+                                    <font size="3" face="Verdana">
+                                        3. Supplementary Materials<br>
                                     </font>
-                                    </p>
-                                    <font size="2" face="Verdana">
-                                          
-                                    <p>
-                                        Detecting gene-gene interactions during genetic studies of common human diseases is important, and  multifactor dimensionality reduction has been widely applied to these ends. However, this technique is not free from the "curse of dimensionality" since it works well for two- or three-way interaction but requires a long execution time and extensive computing resources to detect a 10-way interaction. In this paper, we propose a boosting method that reduces the execution time of multifactor dimensionality reduction by using pre-evaluation measurements to remove gene sets that have low interaction before applying the reduction to the remaining sets. The proposed method reduces the problem space and induces an extreme saving in execution time.
-                                    </p>
+                                </strong><br>
+                                <font size="2" face="Verdana">
+                                </font></p>
+                            <ul><font size="2" face="Verdana">
+                                <li><a href="boostMDR_normal.R">boostMDR_normal.R </a> : boostMDR for easy understanding
                                     <br>
-                                    <br>
-                                    <p align="center">
-                                        <img src="Bfigure1.jpg" width="405" height="431"><br><br>
-                                        Figure1. Idea of boosting MDR
-                                    </p>
-                                          
+                                </li>
+                                <li><a href="boostMDR_optimized_singlecore.R">boostMDR_optimized_singlecore.R </a> :
+                                    optimized version for single core<br></li>
+                                <li><a href="boostMDR_optimized_multicore.R">boostMDR_optimized_multicore.R </a> :
+                                    optimized version for multi core<br>
+                                </li>
+                                <li><a href="test_boostMDR.R">test_boostMDR.R </a> : Test code for boostMDR<br>
+                                </li>
+                            </font></ul>
+                            <font size="2" face="Verdana">
+                            </font>
+                            <br>
+                            <p></p>
+
+
+                            <p>
+                                <strong>
+                                    <font size="3" face="Verdana">
+                                        4. Reference<br>
                                     </font>
-                                    <div align="left">
-                                    <font size="2" face="Verdana">
-                                    <br>
-                                    </font>
-                                    <br>
-                                    
-                                    <p>
-                                        <strong>
-                                        <font size="3" face="Verdana">
-                                            2. Pre-evaluation function<br>
-                                            </font>
-                                        </strong>
-                                        <font size="2" face="Verdana">
-                                            Let's suppose Z = {S1, S2, …, Sk} where Si is a SNP and P is a phenotype. We compose the pre-evaluation function as follows:.<br>
-                                           <img src="Bfigure2.jpg"><br>
-                                           </font></p><center><font size="2" face="Verdana"><img src="Bfigure3.jpg" width="798" height="282"><br><br>
-                                           Figure2. An example of DF() calculation</font></center><font size="2" face="Verdana">
-                                        </font>
-                                        <br>
-                                    <p></p>
-                                    
-                                    
-                                    <p>
-                                        <strong>
-                                        <font size="3" face="Verdana">
-                                            3. Supplementary Materials<br>
-                                            </font>
-                                        </strong><br>
-                                        <font size="2" face="Verdana">
-                                        </font></p><ul><font size="2" face="Verdana">
-                                            <li><a href="boostMDR_normal.R">boostMDR_normal.R </a> : boostMDR for easy understanding <br>  
-                                            </li><li><a href="boostMDR_optimized_singlecore.R">boostMDR_optimized_singlecore.R </a> : optimized version for single core<br> </li><li><a href="boostMDR_optimized_multicore.R">boostMDR_optimized_multicore.R </a> : optimized version for multi core<br>  
-                                            </li><li><a href="test_boostMDR.R">test_boostMDR.R </a> : Test code for boostMDR<br>  
-                                        </li></font></ul><font size="2" face="Verdana">
-                                        </font>
-                                        <br>
-                                    <p></p>
-                                    
-                                    
-                                    <p>
-                                        <strong>
-                                        <font size="3" face="Verdana">
-                                            4. Reference<br>
-                                            </font>
-                                        </strong>
-                                        <font size="2" face="Verdana">
-                                            (to be added)
-                                        </font>
-                                        <br>
-                                    </p>
-                                    
-                                    </div>
-                                </div>
-                    </td>
-                </tr>
+                                </strong>
+                                <font size="2" face="Verdana">
+                                    (to be added)
+                                </font>
+                                <br>
+                            </p>
+
+                        </div>
+                    </div>
+                </td>
+            </tr>
             </tbody>
         </table>
     </div>
-    </body>
+</div>
+</body>
 </html>

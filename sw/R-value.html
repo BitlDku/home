@@ -1,131 +1,148 @@
 <!doctype html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>R-value</title>
-        <link href="../css/bootstrap.min.css" rel="stylesheet" media="screen">
-        <link rel="stylesheet" type="text/css" href="../css/template_index.css">
-    </head>
-    <body>
-            <div>
-                    <div id="back"><img src="../img/bitl.png"></div>
-                    <div class="navbar">
-                        <div class="navbar-inner">
-                          
-                          <ul class="nav">
-                            <li><a href="../index.html">HOME</a></li>
-                            <li><a href="../introduction/introduction.html">Intreoduction</a></li>
-                            <li><a href="../professor/professor.html">Professor</a></li>
-                            <li><a href="../members/members.html">Members</a></li>
-                            <li><a href="../research/research_journal.html">Research</a></li>
-                            <li><a href="../education/education.html">Education</a></li>
-                            <li class="active"><a href="../sw/software.html">Software</a></li>
-                          </ul>
-                        </div>
-            </div>
-            <div class="board">
+<head>
+    <meta charset="utf-8">
+    <title>R-value</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" type="text/css" href="../css/template_index.css">
+</head>
+<body>
+<div>
+    <div id="back"><img src="../img/bitl.png"></div>
+    <div class="navbar">
+        <div class="navbar-inner">
 
-            <div class="menu">
-                <ul class="nav nav-pills nav-stacked">
-                    <li>
-                        <a href="./software.html">BIO SOFTWARE</a>
-                    </li>
-                    <li>
-                       <a href="./balancedSampling.html">balancedSampling</a>
-                    </li>
-                    <li>
-                        <a href="./f_interaction.html">f_interaction</a>
-                    </li>
-                    <li>
-                        <a href="./Hybrid_RFE.html">Hybrid RFE</a>
-                    </li>
-                </ul>
-            </div>
+            <ul class="nav">
+                <li><a href="../index.html">HOME</a></li>
+                <li><a href="../introduction/introduction.html">Intreoduction</a></li>
+                <li><a href="../professor/professor.html">Professor</a></li>
+                <li><a href="../members/members.html">Members</a></li>
+                <li><a href="../research/research_journal.html">Research</a></li>
+                <li><a href="../education/education.html">Education</a></li>
+                <li class="active"><a href="../sw/software.html">Software</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="board">
+
+        <div class="menu">
+            <ul class="nav nav-pills nav-stacked">
+                <li>
+                    <a href="./software.html">BIO SOFTWARE</a>
+                </li>
+                <li>
+                    <a href="./balancedSampling.html">balancedSampling</a>
+                </li>
+                <li>
+                    <a href="./f_interaction.html">f_interaction</a>
+                </li>
+                <li>
+                    <a href="./Hybrid_RFE.html">Hybrid RFE</a>
+                </li>
+            </ul>
+        </div>
         <h3>[ R-value ]</h3>
         <table>
             <tbody>
-                <tr>
-                    <td>
-                        <p>
-                            <strong>1. Introduction<br></strong>
-                            The quality of dataset has a profound effect on classification accuracy, and there is a clear need for some method to evaluate this quality. R-value is a new dataset evaluation method. This proposed method is based on the ratio of overlapping areas among categories in a dataset. A high R-value for a dataset indicates that the dataset contains wide overlapping areas among its categories (classes), and classification accuracy on the dataset may become low. We can use the R-value measure to understand the characteristics of a dataset, the feature selection process, and the proper design of new classifiers. R-value captures overlapping areas as shown in Figure 1.
-                        </p>
-                        <p allign="center">
-                            <img width="100%" height="100%" src="rValueFigure1.jpg">
-                            <br>
-                            <div allign="center">Figure1. Concept of R-value</div>
-                        </p>
+            <tr>
+                <td>
+                    <p>
+                        <strong>1. Introduction<br></strong>
+                        The quality of dataset has a profound effect on classification accuracy, and there is a clear
+                        need for some method to evaluate this quality. R-value is a new dataset evaluation method. This
+                        proposed method is based on the ratio of overlapping areas among categories in a dataset. A high
+                        R-value for a dataset indicates that the dataset contains wide overlapping areas among its
+                        categories (classes), and classification accuracy on the dataset may become low. We can use the
+                        R-value measure to understand the characteristics of a dataset, the feature selection process,
+                        and the proper design of new classifiers. R-value captures overlapping areas as shown in Figure
+                        1.
+                    </p>
+                    <p allign="center">
+                        <img width="100%" height="100%" src="rValueFigure1.jpg">
+                        <br>
+                    <div allign="center">Figure1. Concept of R-value</div>
+                    </p>
 
-                        <p><font size="2" face="Verdana">	
-                                <br><b>** 3 types of R-value</b><br>
-                                </font>
-                            </p>
+                    <p><font size="2" face="Verdana">
+                        <br><b>** 3 types of R-value</b><br>
+                    </font>
+                    </p>
 
-                            <ul>
-                                <li>R-value between two categories (<i>Figure 2(a)</i>)
-                                </li><li>R-value of a category (<i>Figure 2(b)</i>)
-                                </li><li>R-value of a whole dataset (<i>Figure 2(c)</i>)
-                                </li>
-                            </ul>
-                            <p></p>
+                    <ul>
+                        <li>R-value between two categories (<i>Figure 2(a)</i>)
+                        </li>
+                        <li>R-value of a category (<i>Figure 2(b)</i>)
+                        </li>
+                        <li>R-value of a whole dataset (<i>Figure 2(c)</i>)
+                        </li>
+                    </ul>
+                    <p></p>
 
-                            <img width="80%" heigh="80%" src="rValueFigure2.jpg">
-                            <br>
-                            <div allign="center">Figure2. Three types of R-valuez<br></div>
-                            <p></p>
-                        <p>
-                            <strong>2. Usage<br></strong>
-                            <font face="Verdana"></font>
+                    <img width="80%" heigh="80%" src="rValueFigure2.jpg">
+                    <br>
+                    <div allign="center">Figure2. Three types of R-valuez<br></div>
+                    <p></p>
+                    <p>
+                        <strong>2. Usage<br></strong>
+                        <font face="Verdana">
                             <b>Format of Excution: </b><br><br>
-	                        java calcRvalue [dataset file name] [K value] [seta value]<br><br>
-	                        <b>Options:</b><br><br>
-	                        -dataset file name : dataset file for evaluation <br>
-	                        -K value : number of nearest neighbors (optional)<br>
-	                        -seta value : threshold to decide if a sample belongs to overlapping area or not (optional)<br>
+                            java calcRvalue [dataset file name] [K value] [seta value]<br><br>
+                            <b>Options:</b><br><br>
+                            -dataset file name : dataset file for evaluation <br>
+                            -K value : number of nearest neighbors (optional)<br>
+                            -seta value : threshold to decide if a sample belongs to overlapping area or not
+                            (optional)<br>
                             <br>
-	                        <b>Examples</b> <br><br>
-	                        java calcRvalue mydataset.csv <br>
+                            <b>Examples</b> <br><br>
+                            java calcRvalue mydataset.csv <br>
                             java calcRvalue mydataset.csv 7 3<br>
-                            </font>
-                        </p>
-                        <p>
-                            <strong>3. Download<br></strong>
-                            <ul>
-                                <li>
-                                    <a href="calcRvalue.java" download>calcRvalue.java</a> : R-value calculation program
-                                </li>
-                                <li>
-                                    <a href="run.bat" download> run.bat</a> : batch file sample for execution calcRvalue.java
-                                </li>
-                                <li>
-                                    R-value source file : AmRMR needs
-                                    <a href="winequality-white.csv" download>winequality-white.csv</a> : sample dataset file
-                                </li>
-                            </ul>
-                        </p>
-                        <font size="2" face="Verdana">
-                                <b>More sample Dataset</b><br><br>
-                                <ul>
-                                   <li><a href="iris.csv" target="blank">iris.csv</a><br>
-                                   </li><li><a href="cmc.csv" target="blank">cmc.csv</a><br>
-                                   </li><li><a href="balance-scale.csv" target="blank">balance-scale.csv</a><br>
-                                    </li>
-                                </ul>
-                                <b>Note</b>
-                                <ol type="1">
-                                        <li>Dataset should be .csv format. 
-                                        </li><li>Only numerical vaule is allowed for dataset. 
-                                        </li><li>First column of dataset should be class(category) data and shold have continuous value beginning with 0.(0,1,2,3,...)  
-                                     </li>
-                                </ol>
+                        </font>
+                    </p>
+                    <p>
+                        <strong>3. Download<br></strong>
+                    <ul>
+                        <li>
+                            <a href="calcRvalue.java" download>calcRvalue.java</a> : R-value calculation program
+                        </li>
+                        <li>
+                            <a href="run.bat" download> run.bat</a> : batch file sample for execution calcRvalue.java
+                        </li>
+                        <li>
+                            R-value source file : AmRMR needs
+                            <a href="winequality-white.csv" download>winequality-white.csv</a> : sample dataset file
+                        </li>
+                    </ul>
+                    </p>
+                    <font size="2" face="Verdana">
+                        <b>More sample Dataset</b><br><br>
+                        <ul>
+                            <li><a href="iris.csv" target="blank">iris.csv</a><br>
+                            </li>
+                            <li><a href="cmc.csv" target="blank">cmc.csv</a><br>
+                            </li>
+                            <li><a href="balance-scale.csv" target="blank">balance-scale.csv</a><br>
+                            </li>
+                        </ul>
+                        <b>Note</b>
+                        <ol type="1">
+                            <li>Dataset should be .csv format.
+                            </li>
+                            <li>Only numerical vaule is allowed for dataset.
+                            </li>
+                            <li>First column of dataset should be class(category) data and shold have continuous value
+                                beginning with 0.(0,1,2,3,...)
+                            </li>
+                        </ol>
                         <p>
                             <strong>4. Citation Request:<br></strong>
                             Sejong Oh, Improved Measures of Redundancy and Relevance for mRMR Feature Selection.
                         </p>
-                    </td>
-                </tr>
+                    </font>
+                </td>
+            </tr>
             </tbody>
         </table>
     </div>
-    </body>
+</div>
+</body>
 </html>
