@@ -1,0 +1,49 @@
+# feature evaluation & selection
+library(FSelector)
+
+weights <- symmetrical.uncertainty(Species~., iris)
+print(weights)
+subset <- cutoff.k(weights, 2)
+
+ds <- iris[,subset]
+cl <- factor(iris$Species)
+
+
+## kfold cross validation
+library(caret)
+library(e1071)  # svm
+library(randomForest)
+
+
+kfold <- function(classifier, ds, cl, fold) {
+  acc <- c()
+  for (i in 1:length(fold)) {
+    ds.train <- ds[-fold[[i]], ]
+    ds.test <-  ds[fold[[i]], ]
+    cl.train <- cl[-fold[[i]]]
+    cl.test <- cl[fold[[i]]]
+
+    if (classifier == 'svm') model <- svm(ds.train, cl.train)
+    if (classifier == 'rf') model <- randomForest(ds.train, cl.train)
+
+    pred <- predict(model, ds.test)
+    acc[i] <- mean(pred==cl.test)
+  }
+
+  return(mean(acc))
+
+}
+
+set.seed(100)
+fold <- createFolds(cl, k=5, list=TRUE, returnTrain = FALSE)
+
+## SVM
+acc <- kfold("svm", ds, cl, fold)
+cat("svm :", acc, "\n")
+
+## RandomForest
+acc <- kfold("rf", ds, cl, fold)
+cat("rf :", acc, "\n")
+
+
+

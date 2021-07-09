@@ -1,0 +1,183 @@
+# devtools, roxigen2  install
+# NAMESPACE 삭제후 document() 로 재생성
+
+rm(list=ls())
+setwd("D:/lecture/FIG")
+document()
+
+setwd("D:/lecture")
+install("FIG")   # library(devtools)
+.rs.restartR()   # session restart
+library(FIG)
+
+data("Boston", package = "MASS")
+library("randomForest")
+rf <- randomForest(medv ~ ., data = Boston, ntree = 50)
+
+FIobj1 <- FItable(rf, train=Boston, target.name="medv", grid=50, task="regression",
+                 interaction_type="OH2")
+FIgraph(gtype="I", FIobj=FIobj1, task="regression")
+
+library(e1071); library(pdp)
+data(pima)
+#sv <- svm(iris[,-5], iris$Species, probability = T)
+pima <- pima[complete.cases(pima),]
+sv <- svm(pima[,-9], pima$diabetes)
+
+FIobj2 <- FItable(sv, train=pima, target.name="diabetes", grid=50, task="classification",
+                  interaction_type="OH2")
+FIgraph(th=NULL, gtype="S", FIobj=FIobj2, task="classification", class.name="all",
+        show.edge.weight=T)
+
+sv <- svm(iris[,-5], iris$Species)
+FIobj3 <- FItable(sv, train=iris, target.name="Species", all.class=F, grid=50, task="classification",
+                  interaction_type="OH2")
+FIgraph(th=NULL, gtype="I", FIobj=FIobj3, task="classification", class.name='setosa',
+        show.edge.weight=T, seed=102)
+
+###################################
+library(caret)
+library(mlbench)
+
+
+import_caret_imp <- function(caret.obj, FItable.obj) {
+  type <- ifelse(ncol(FItable.obj$Fimp)==2, "regression", "classification")
+  FItable.obj.new = FItable.obj
+
+  if (type=="regression") {
+    FItable.obj.new$Fimp[,2] <- NA
+    for (i in 1:nrow(FItable.obj.new$Fimp)) {
+      idx <- which(rownames(caret.obj) == FItable.obj.new$Fimp$feature[i])
+      FItable.obj.new$Fimp[i,2] <- caret.obj[idx,1]
+    }
+
+  } else {  # classification
+    FItable.obj.new$Fimp[,3] <- NA
+    for (i in 1:nrow(FItable.obj.new$Fimp)) {
+      idx <- which(rownames(caret.obj) == FItable.obj.new$Fimp$feature[i])
+      if (FItable.obj.new$Fimp$class[i] == "all") {
+        FItable.obj.new$Fimp[i,3] <- rowMeans(caret.obj[idx,])
+      } else {
+        FItable.obj.new$Fimp[i,3] <- caret.obj[idx,FItable.obj.new$Fimp$class[i]]
+      }
+    }
+  }
+
+  return(FItable.obj.new)
+}
+
+modelFit <- train( Species~.,data=iris, method="rpart" )
+myImp <- varImp(modelFit)
+
+myImp2 <- filterVarImp(x=iris[,-5],y=iris[,5])
+bb <- import_caret_imp(myImp2, FIobj3)
+bb
+
+
+data(pima)
+myImp3 <- filterVarImp(x=pima[,-9],y=pima[,9])
+
+data("Boston", package = "MASS")
+myImp3 <- filterVarImp(x=Boston[,-14],y=Boston[,14])
+
+aa <- import_caret_imp(myImp3, FIobj1)
+aa
+FIgraph(th=NULL, gtype="S", FIobj=aa, task="regression", class.name=NULL,
+        show.edge.weight=T)
+
+##################################################
+# Iris SVM
+library(e1071)
+
+ds <- iris['Petal.Width']
+model.1 <- svm(ds, iris$Species)
+pred <- predict(model.1, ds)
+acc.1 <- mean(pred==iris$Species)
+acc.1 # 0.96
+
+ds <- iris['Petal.Length']
+model.2 <- svm(ds, iris$Species)
+pred <- predict(model.2, ds)
+acc.2 <- mean(pred==iris$Species)
+acc.2 # 0.95
+
+ds <- iris[,c('Petal.Width', 'Petal.Length')]
+model.3 <- svm(ds, iris$Species)
+pred <- predict(model.3, ds)
+acc.3 <- mean(pred==iris$Species)
+acc.3 # 0.96
+
+#
+data("Boston", package = "MASS")
+Boston2 = Boston[,c(1,6,7,10,11,13,14)]
+library("randomForest")
+set.seed(100)
+rf <- randomForest(medv ~ ., data = Boston2, ntree = 50)
+pred <- predict(rf, Boston2)
+acc <- mean(abs(pred-Boston2$medv))
+acc # 0.9619215    1.162652
+
+set.seed(100)
+bs2 <- Boston[,-c(4,12,2,9)]
+rf2 <- randomForest(medv ~ ., data = bs2, ntree = 50)
+pred <- predict(rf2, bs2)
+acc2 <- mean(abs(pred-bs2$medv))
+acc2  #1.009683
+
+set.seed(100)
+rf3 <- randomForest(medv ~ ., data = Boston2, ntree = 500)
+pred <- predict(rf3, Boston2)
+acc3 <- mean(abs(pred-Boston2$medv))
+acc3 # 0.9619215   1.120522
+
+
+FIobj1 <- FItable(rf, train=Boston2, target.name="medv", grid=50, task="regression",
+                  interaction_type="OH2")
+
+FIgraph(gtype="I", FIobj=FIobj1, task="regression")
+
+
+FIobj3 <- FItable(rf3, train=Boston2, target.name="medv", grid=50, task="regression",
+                  interaction_type="OH2")
+
+FIgraph(th=0.5560667, gtype="I", FIobj=FIobj3, task="regression")
+
+
+
+library("FIG")
+ # for regression
+ data("Boston", package = "MASS")
+ model <- lm(medv ~ ., data = Boston)
+ FIobj1 <- FItable(model, train=Boston, target.name="medv", grid=50,
+                  task="regression", interaction_type="OH2")
+ print(FIobj1)
+ FIgraph(gtype="S", FIobj=FIobj1, task="regression")
+
+ myImp <- filterVarImp(x=Boston[,-14],y=Boston[,14])
+ FIobj.new <- import_caret_imp(myImp3, FIobj1)
+ FIgraph(gtype="S", FIobj=FIobj.new, task="regression")
+
+
+library(e1071)
+ model2 <- svm(Species~., data=iris)
+ FIobj2 <- FItable(model2, train=iris, target.name="Species", grid=50,
+                  task="classification", interaction_type="OH2", all.class=F)
+ print(FIobj2)
+ FIgraph(th=NULL, gtype="I", FIobj=FIobj2, task="classification", class.name='setosa',
+         show.edge.weight=T, seed=102)
+
+
+  library("FIG")
+  # for regression
+ data("Boston", package = "MASS")
+  model <- lm(medv ~ ., data = Boston)
+  FIobj <- FItable(model, train=Boston, target.name="medv", grid=50,
+                   task="regression", interaction_type="OH2")
+ print(FIobj)
+  FIgraph(gtype="S", FIobj=FIobj, task="regression", seed=101)
+
+# get feature importance from CARET
+ myImp <- filterVarImp(x=Boston[,-14], y=Boston[,14])  #  14th column is 'mdev'
+ FIobj.new <- import_caret_imp(myImp, FIobj)
+ FIgraph(gtype="S", FIobj=FIobj.new, task="regression")
+

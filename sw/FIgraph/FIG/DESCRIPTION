@@ -1,0 +1,17 @@
+Package: FIG
+Type: Package
+Title: Visualize performance-based feature interaction
+Version: 0.1.0
+Author: Sejong Oh
+Maintainer: TSejong Oh <sejongoh@dankook.ac.kr>
+Description: This package support visualizing feature interaction as a graph.
+License: GPL
+Encoding: UTF-8
+LazyData: true
+Imports: igraph, 
+         R6,
+         vip,
+         checkmate, 
+         data.table,
+         Metrics
+RoxygenNote: 7.1.1
