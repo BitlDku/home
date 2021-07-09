@@ -1,0 +1,278 @@
+
+#'
+#' @references
+#' Fisher, A., Rudin, C., and Dominici, F. (2018). Model Class Reliance:
+#' Variable Importance Measures for any Machine Learning Model Class, from the
+#' "Rashomon" Perspective. Retrieved from http://arxiv.org/abs/1801.01489
+#'
+#' @import Metrics
+#' @importFrom data.table copy rbindlist
+#' @examples
+#' library("rpart")
+#' # We train a tree on the Boston dataset:
+#' data("Boston", package = "MASS")
+#' tree <- rpart(medv ~ ., data = Boston)
+#' y <- Boston$medv
+#' X <- Boston[-which(names(Boston) == "medv")]
+#' mod <- Predictor$new(tree, data = X, y = y)
+#'
+#'
+#' # Compute feature importances as the performance drop in mean absolute error
+#' imp <- FeatureImp$new(mod, loss = "mae")
+#'
+#' # Plot the results directly
+#' plot(imp)
+#'
+#'
+#' # Since the result is a ggplot object, you can extend it:
+#' library("ggplot2")
+#' plot(imp) + theme_bw()
+#' # If you want to do your own thing, just extract the data:
+#' imp.dat <- imp$results
+#' head(imp.dat)
+#' ggplot(imp.dat, aes(x = feature, y = importance)) +
+#'   geom_point() +
+#'   theme_bw()
+#'
+#' # We can also look at the difference in model error instead of the ratio
+#' imp <- FeatureImp$new(mod, loss = "mae", compare = "difference")
+#'
+#' # Plot the results directly
+#' plot(imp)
+#'
+#'
+#' # FeatureImp also works with multiclass classification.
+#' # In this case, the importance measurement regards all classes
+#' tree <- rpart(Species ~ ., data = iris)
+#' X <- iris[-which(names(iris) == "Species")]
+#' y <- iris$Species
+#' mod <- Predictor$new(tree, data = X, y = y, type = "prob")
+#'
+#' # For some models we have to specify additional arguments for the predict function
+#' imp <- FeatureImp$new(mod, loss = "ce")
+#' plot(imp)
+#'
+#' # For multiclass classification models, you can choose to only compute
+#' # performance for one class.
+#' # Make sure to adapt y
+#' mod <- Predictor$new(tree,
+#'   data = X, y = y == "virginica",
+#'   type = "prob", class = "virginica"
+#' )
+#' imp <- FeatureImp$new(mod, loss = "ce")
+#' plot(imp)
+
+
+FeatureImp <- R6::R6Class("FeatureImp",
+  inherit = InterpretationMethod,
+
+  public = list(
+
+    #' @description Create a FeatureImp object
+    #' @param predictor [Predictor]\cr
+    #'   The object (created with `Predictor$new()`) holding the machine
+    #'   learning model and the data.
+    #' @param loss (`character(1)` | [function])\cr
+    #'   The loss function. Either the name of a loss (e.g. `"ce"` for
+    #'   classification or `"mse"`) or a function. See Details for allowed
+    #'   losses.
+    #' @param compare (`character(1)`)\cr
+    #' Either `"ratio"` or `"difference"`.
+    #' Should importance be measured as the difference or as the ratio of
+    #' original model error and model error after permutation?
+    #' - Ratio: error.permutation/error.orig
+    #' - Difference: error.permutation - error.orig
+    #' @param n.repetitions (`numeric(1)`)\cr
+    #' How often should the shuffling of the feature be repeated?
+    #' The higher the number of repetitions the more stable and accurate the
+    #' results become.
+    #' @return (data.frame)\cr
+    #' data.frame with the results of the feature importance computation. One
+    #' row per feature with the following columns:
+    #' - importance.05 (5% quantile of importance values from the repetitions)
+    #' - importance (median importance)
+    #' - importance.95 (95% quantile) and the permutation.error (median error
+    #' over all repetitions).
+    #'
+    #' The distribution of the importance is also visualized as a bar in the
+    #' plots, the median importance over the repetitions as a point.
+    #'
+    initialize = function(predictor, loss, compare = "ratio",
+                          n.repetitions = 5) {
+
+      assert_choice(compare, c("ratio", "difference"))
+      assert_number(n.repetitions)
+      self$compare <- compare
+      if (!inherits(loss, "function")) {
+        ## Only allow metrics from Metrics package
+        allowedLosses <- c(
+          "ce", "f1", "logLoss", "mae", "mse", "rmse", "mape", "mdae",
+          "msle", "percent_bias", "rae", "rmse", "rmsle", "rse", "rrse", "smape"
+        )
+        checkmate::assert_choice(loss, allowedLosses)
+        private$loss_string <- loss
+        loss <- getFromNamespace(loss, "Metrics")
+      } else {
+        private$loss_string <- head(loss)
+      }
+      if (is.null(predictor$data$y)) {
+        stop("Please call Predictor$new() with the y target vector.")
+      }
+      super$initialize(predictor = predictor)
+      self$loss <- private$set_loss(loss)
+      private$getData <- private$sampler$get.xy
+      self$n.repetitions <- n.repetitions
+      actual <- private$sampler$y[[1]]
+      predicted <- private$run.prediction(private$sampler$X)[[1]]
+      # Assuring that levels are the same
+      self$original.error <- loss(actual, predicted)
+      if (self$original.error == 0 & self$compare == "ratio") {
+        warning("Model error is 0, switching from compare='ratio' to compare='difference'")
+        self$compare <- "difference"
+      }
+      # suppressing package startup messages
+      suppressPackageStartupMessages(private$run(self$predictor$batch.size))
+    },
+
+    #' @field loss (`character(1)` | [function])\cr
+    #'   The loss function. Either the name of a loss (e.g. `"ce"` for
+    #'   classification or `"mse"`) or a function.
+    loss = NULL,
+
+    #' @field original.error (`numeric(1)`)\cr
+    #' The loss of the model before perturbing features.
+    original.error = NULL,
+
+    #' @field n.repetitions [integer]\cr
+    #'   Number of repetitions.
+    n.repetitions = NULL,
+
+    #' @field compare (`character(1)`)\cr Either `"ratio"` or `"difference"`,
+    #'   depending on whether the importance was calculated as difference
+    #'   between original model error and model error after permutation or as
+    #'   ratio.
+    compare = NULL
+  ),
+
+  private = list(
+    # for printing
+    loss_string = NULL,
+    q = function(pred) probs.to.labels(pred),
+    combine.aggregations = function(agg, dat) {
+      if (is.null(agg)) {
+        return(dat)
+      }
+    },
+    run = function(n) {
+
+      private$dataSample <- private$getData()
+      result <- NULL
+
+      estimate_feature_imp <- function(feature,
+                                       data.sample,
+                                       y,
+                                       n.repetitions,
+                                       y.names,
+                                       pred,
+                                       loss) {
+
+        cnames <- setdiff(colnames(data.sample), y.names)
+        qResults <- data.table::data.table()
+        y.vec <- data.table::data.table()
+        for (repi in 1:n.repetitions) {
+          mg <- MarginalGenerator$new(data.sample, data.sample,
+            features = feature, n.sample.dist = 1, y = y, cartesian = FALSE,
+            id.dist = TRUE
+          )
+          while (!mg$finished) {
+            data.design <- mg$next.batch(n, y = TRUE)
+            y.vec <- rbind(y.vec, data.design[, y.names, with = FALSE])
+            qResults <- rbind(
+              qResults,
+              pred(data.design[, cnames, with = FALSE])
+            )
+          }
+        }
+        # AGGREGATE measurements
+        results <- data.table::data.table(
+          feature = feature, actual = y.vec[[1]], predicted = qResults[[1]],
+          num_rep = rep(1:n.repetitions, each = nrow(data.sample))
+        )
+        results <- results[, list("permutation_error" = loss(actual, predicted)),
+          by = list(feature, num_rep)
+        ]
+        results
+      }
+
+      n.repetitions <- self$n.repetitions
+      data.sample <- private$dataSample
+      y <- private$sampler$y
+      y.names <- private$sampler$y.names
+      pred <- private$run.prediction
+      loss <- self$loss
+
+      result <- rbindlist(unname(
+        future.apply::future_lapply(private$sampler$feature.names, function(x) {
+          estimate_feature_imp(x,
+            data.sample = data.sample,
+            y = y,
+            n.repetitions = n.repetitions,
+            y.names = y.names,
+            pred = pred,
+            loss = loss
+          )
+        },
+        future.seed = TRUE,
+        future.globals = FALSE,
+        future.packages = loadedNamespaces()
+        )
+      ), use.names = TRUE)
+
+      if (self$compare == "ratio") {
+        result[, importance_raw := permutation_error / self$original.error]
+      } else {
+        result[, importance_raw := permutation_error - self$original.error]
+      }
+      result <- result[, list(
+        "importance" = median(importance_raw),
+        "permutation.error" = median(permutation_error),
+        "importance.05" = quantile(importance_raw, probs = 0.05),
+        "importance.95" = quantile(importance_raw, probs = 0.95)
+      ), by = list(feature)]
+      result <- result[order(result$importance, decreasing = TRUE), ]
+      # Removes the n column
+      result <- result[, list(
+        feature, importance.05, importance, importance.95,
+        permutation.error
+      )]
+      private$finished <- TRUE
+      self$results <- data.frame(result)
+    },
+    generatePlot = function(sort = TRUE, ...) {
+      requireNamespace("ggplot2", quietly = TRUE)
+      res <- self$results
+      if (sort) {
+        res$feature <- factor(res$feature,
+          levels = res$feature[order(res$importance)]
+        )
+      }
+      xstart <- ifelse(self$compare == "ratio", 1, 0)
+      ggplot(res, aes(y = feature, x = importance)) +
+        geom_segment(aes(y = feature, yend = feature, x = importance.05, xend = importance.95), size = 1.5, color = "darkslategrey") +
+        geom_point(size = 3) +
+        scale_x_continuous(sprintf("Feature Importance (loss: %s)", private$loss_string)) +
+        scale_y_discrete("")
+    },
+    set_loss = function(loss) {
+      self$loss <- loss
+    },
+    printParameters = function() {
+      cat("error function:", private$loss_string)
+    }
+  )
+)
+
+
+plot.FeatureImp <- function(x, sort = TRUE, ...) {
+  x$plot(sort = sort, ...)
+}
