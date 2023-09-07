@@ -289,7 +289,7 @@ heuristic_tribrid_search_parallel <- function(i, filtered, cl, N) {
 }
 
 
-hybrid_feature_selection <- function (ds, cl) {
+heuristic_feature_selection <- function (ds, cl) {
   #RANKED, theta, RATIO = 0.5, fold=5, start=1
   
   #gradual permutation filtering
