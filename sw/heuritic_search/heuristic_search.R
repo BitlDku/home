@@ -313,9 +313,3 @@ hybrid_feature_selection <- function (ds, cl) {
   return(list(feature=best.set, fit=best.fit))
 }
 
-# test
-mds <- read.csv('alon.csv')
-ds <- mds[,-1]
-cl <- mds[,1]
-res <- hybrid_feature_selection(ds, cl)
-
