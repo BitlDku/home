@@ -253,9 +253,22 @@ consolate <- function(ds, cl, chosen, candidate, max.fit, end, theta, fold){
   return(list(chosen, candidate, max.fit, consol))
 }
 
-heuristic_tribrid_search_parallel <- function(i, filtered, cl, N) {
+heuristic_tribrid_search_parallel <- function(i, filtered, cl, N) { 
   
-  # For parallel computation
+  best.set <- NULL
+  best.num <- ncol(filtered)
+  best.acc <- 0
+  best.start <- 0
+  
+  res <- heuristic_tribrid_search(filtered, cl, i, N) 
+  
+  return(list("fit" = res$fit, "features" = res$features))
+}
+
+
+heuristic_feature_selection <- function (ds, cl) {
+  #RANKED, theta, RATIO = 0.5, fold=5, start=1
+    # For parallel computation
   numCores <- detectCores()
   clst <- makeCluster(numCores)
   
@@ -275,23 +288,6 @@ heuristic_tribrid_search_parallel <- function(i, filtered, cl, N) {
   clusterExport(clst, "heuristic_tribrid_search_parallel")
   clusterExport(clst, "consolate")
   
-  
-  best.set <- NULL
-  best.num <- ncol(filtered)
-  best.acc <- 0
-  best.start <- 0
-  
-  res <- heuristic_tribrid_search(filtered, cl, i, N) 
-  
-  stopCluster(clst)
-  
-  return(list("fit" = res$fit, "features" = res$features))
-}
-
-
-heuristic_feature_selection <- function (ds, cl) {
-  #RANKED, theta, RATIO = 0.5, fold=5, start=1
-  
   #gradual permutation filtering
   print("Now graudal permutation filtering  ...")
   rank <- gradual_permutation_filtering(ds, cl)  
@@ -309,6 +305,8 @@ heuristic_feature_selection <- function (ds, cl) {
   best.start <- which(fit == max(fit))[1]
   best.set <- candidate_set[[best.start]]$features
   best.fit <- candidate_set[[best.start]]$fit
+
+  stopCluster(clst)
   
   return(list(feature=best.set, fit=best.fit))
 }
